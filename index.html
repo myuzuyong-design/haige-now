@@ -2852,5 +2852,18 @@ function run(){
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",run)}else{run()}
 })();
 </script>
+<!-- daygate -->
+<script>
+(function(){
+var OPEN=new Date("2026-11-27T00:00:00+09:00").getTime();
+if(Date.now()>=OPEN)return;
+function hide(){
+var g=document.getElementById("guide");
+if(g)g.style.display="none";
+document.querySelectorAll('a[href="#guide"]').forEach(function(a){a.style.display="none"});
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",hide);else hide();
+})();
+</script>
 </body>
 </html>
