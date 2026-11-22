@@ -540,6 +540,19 @@
   }
   .filter-results-none{font-size:15.5px;font-weight:700;color:var(--muted);margin:0}
   .filter-hit{outline:3px solid var(--gold)!important;outline-offset:3px}
+  .filter-banner{
+    position:sticky;top:0;z-index:30;
+    background:#f5b942;color:#191104;
+    display:flex;align-items:center;justify-content:center;gap:10px 16px;flex-wrap:wrap;
+    padding:12px 16px;text-align:center;
+    box-shadow:0 4px 18px rgba(0,0,0,.28);
+  }
+  .filter-banner[hidden]{display:none}
+  .filter-banner-text{margin:0;font-size:19px;font-weight:900;line-height:1.5}
+  .filter-banner-btn{
+    min-height:48px;padding:8px 26px;border-radius:999px;border:2px solid #191104;
+    background:#191104;color:#f5b942;font-size:17px;font-weight:900;white-space:nowrap;
+  }
   footer{margin-top:64px;border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:14px}
   footer h3{color:var(--ink);font-size:15px;margin:0 0 10px}
   footer ul{margin:0 0 18px;padding-left:1.2em}
@@ -651,7 +664,7 @@
     </div>
     <div class="hero-live">
       <p class="hero-live-main"><span class="hl-num" id="heroLiveN">17</span><span class="hl-unit">人 配信中</span></p>
-      <p class="hero-live-sub">合計<span class="hl-num2" id="heroViewers">86,310</span>人が視聴中</p>
+      <p class="hero-live-sub">合計<span class="hl-num2" id="heroViewers">89,164</span>人が視聴中</p>
     </div>
     <div class="hero-cta-main">
       <a class="btn-big gold" href="#now">いま配信中を見る</a>
@@ -681,125 +694,130 @@
   </div>
 </nav>
 
+<div class="filter-banner" id="filterBanner" hidden>
+  <p class="filter-banner-text" id="filterBannerText"></p>
+  <button class="filter-banner-btn" id="filterBannerClear" type="button">全部見る</button>
+</div>
+
 <main class="wrap">
 
   <!-- NOW -->
   <div class="now" id="now">
     <div class="now-head">
       <h2>いまのハイゲ</h2>
-      <span class="upd">最終確認 11月22日 20:43頃・約5分ごとに自動で更新されます</span>
+      <span class="upd">最終確認 11月22日 20:49頃・約5分ごとに自動で更新されます</span>
     </div>
     <p class="lead">ドラフト後の練習期間まっただ中。最終確認時点で配信中だった17名です。タップで本人の配信が開きます。</p>
     <div class="live-grid">
-<a class="live-card" data-viewers="19552" href="https://www.twitch.tv/indegnasen0706" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="20114" href="https://www.twitch.tv/indegnasen0706" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_indegnasen0706-440x248.jpg" alt="布団ちゃんのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">布団ちゃん</span><span class="lc-team">TEAM k4sen</span></span>
-        <span class="lc-what"><b>スプラ3</b>「あゆたろうとフォイとでスプラやろうかな←息抜きマリオメーカー２」を配信中だった。共演 あゆたろう・ふぉい、16:44開始（20:43時点、約19,552人が視聴）</span>
+        <span class="lc-what"><b>スプラ3</b>「あゆたろうとフォイとでスプラやろうかな←息抜きマリオメーカー２」を配信中だった。共演 あゆたろう・ふぉい、16:44開始（20:49時点、約20,114人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="14144" href="https://www.twitch.tv/stylishnoob4" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="13626" href="https://www.twitch.tv/stylishnoob4" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_stylishnoob4-440x248.jpg" alt="関優太のTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">関優太</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>WWE 2K26</b>「魂のプロレスラーを見つける。」を配信中だった。16:06開始（20:43時点、約14,144人が視聴）</span>
+        <span class="lc-what"><b>WWE 2K26</b>「魂のプロレスラーを見つける。」を配信中だった。16:06開始（20:49時点、約13,626人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="12648" href="https://www.twitch.tv/yaritaiji" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="13290" href="https://www.twitch.tv/yaritaiji" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_yaritaiji-440x248.jpg" alt="たいじのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">たいじ</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>スプラ3</b>「息抜きスプラ」を配信中だった。18:41開始（20:43時点、約12,648人が視聴）</span>
+        <span class="lc-what"><b>スプラ3</b>「息抜きスプラ」を配信中だった。18:41開始（20:49時点、約13,290人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="8585" href="https://www.twitch.tv/batora324" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="8472" href="https://www.twitch.tv/batora324" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_batora324-440x248.jpg" alt="バトラのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">バトラ</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>PUBG</b>「しんじさん、ゆのしーさん、坂本さんとPUBG」を配信中だった。共演 しんじ・yunocy・坂本、19:58開始（20:43時点、約8,585人が視聴）</span>
+        <span class="lc-what"><b>PUBG</b>「しんじさん、ゆのしーさん、坂本さんとPUBG」を配信中だった。共演 しんじ・yunocy・坂本、19:58開始（20:49時点、約8,472人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="5757" href="https://www.twitch.tv/yuyuta0702" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="5610" href="https://www.twitch.tv/yuyuta0702" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_yuyuta0702-440x248.jpg" alt="ゆゆうたのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">ゆゆうた</span><span class="lc-team">TEAM k4sen</span></span>
-        <span class="lc-what"><b>WWE 2K26</b>「プロレスガッツリいこう」を配信中だった。12:49開始（20:43時点、約5,757人が視聴）</span>
+        <span class="lc-what"><b>WWE 2K26</b>「プロレスガッツリいこう」を配信中だった。12:49開始（20:49時点、約5,610人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="4473" href="https://www.twitch.tv/ayutarochan" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="4667" href="https://www.twitch.tv/ayutarochan" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_ayutarochan-440x248.jpg" alt="あゆたろうのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">あゆたろう</span><span class="lc-team">TEAM k4sen</span></span>
-        <span class="lc-what"><b>スプラ3</b>「布団ちゃんとふぉいさんと息抜きスプラ←k4sen㌠いろいろ練習してゆく残り6日！」を配信中だった。共演 布団ちゃん・ふぉい、16:11開始（20:43時点、約4,473人が視聴）</span>
+        <span class="lc-what"><b>スプラ3</b>「布団ちゃんとふぉいさんと息抜きスプラ←k4sen㌠いろいろ練習してゆく残り6日！」を配信中だった。共演 布団ちゃん・ふぉい、16:11開始（20:49時点、約4,667人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="4057" href="https://www.twitch.tv/shinjifromjapanxd" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="4373" href="https://www.twitch.tv/shinjifromjapanxd" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_shinjifromjapanxd-440x248.jpg" alt="しんじのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">しんじ</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>PUBG</b>「坂本・ゆのしー・バトラPUBG練習」を配信中だった。共演 坂本・yunocy・バトラ、13:10開始（20:43時点、約4,057人が視聴）</span>
+        <span class="lc-what"><b>PUBG</b>「坂本・ゆのしー・バトラPUBG練習」を配信中だった。共演 坂本・yunocy・バトラ、13:10開始（20:49時点、約4,373人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="3198" href="https://www.twitch.tv/oniyadayo" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="3840" href="https://www.twitch.tv/oniyadayo" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_oniyadayo-440x248.jpg" alt="おにやのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">おにや</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>めっちゃカメレオン</b>「「芸術の秋」「かくれんぼの秋」「創造性の秋」めっちゃカメレオンのマスターとなるべく今日も筆を握る。」を配信中だった。20:23開始（20:43時点、約3,198人が視聴）</span>
+        <span class="lc-what"><b>めっちゃカメレオン</b>「「芸術の秋」「かくれんぼの秋」「創造性の秋」めっちゃカメレオンのマスターとなるべく今日も筆を握る。」を配信中だった。20:23開始（20:49時点、約3,840人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="2905" href="https://www.twitch.tv/assarisyoko1" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="2990" href="https://www.twitch.tv/assarisyoko1" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_assarisyoko1-440x248.jpg" alt="あっさりしょこのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">あっさりしょこ</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>マリオメーカー2</b>「なにかするゲームする」を配信中だった。14:34開始（20:43時点、約2,905人が視聴）</span>
+        <span class="lc-what"><b>マリオメーカー2</b>「なにかするゲームする」を配信中だった。14:34開始（20:49時点、約2,990人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="2725" href="https://www.twitch.tv/bakumatsu_shishi" target="_blank" rel="noopener">
-        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_bakumatsu_shishi-440x248.jpg" alt="幕末志士・坂本のTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
-        <span class="lc-body">
-        <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">幕末志士・坂本</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>PUBG</b>「ピエロのハイゲ練習三日目(ARC、PUBG、OW)」を配信中だった。18:03開始（20:43時点、約2,725人が視聴）</span>
-        <span class="lc-go">Twitchで観る →</span>
-        </span>
-      </a>
-<a class="live-card" data-viewers="2248" href="https://www.twitch.tv/kenki521" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="2923" href="https://www.twitch.tv/kenki521" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_kenki521-440x248.jpg" alt="けんきのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">けんき</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>PUBG</b>「ハイゲ練習」を配信中だった。20:07開始（20:43時点、約2,248人が視聴）</span>
+        <span class="lc-what"><b>PUBG</b>「ハイゲ練習」を配信中だった。20:07開始（20:49時点、約2,923人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="1762" href="https://www.twitch.tv/euriece" target="_blank" rel="noopener">
-        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_euriece-440x248.jpg" alt="EurieceのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
+<a class="live-card" data-viewers="2836" href="https://www.twitch.tv/bakumatsu_shishi" target="_blank" rel="noopener">
+        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_bakumatsu_shishi-440x248.jpg" alt="幕末志士・坂本のTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
-        <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">Euriece</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>OW</b>「ハイゲ練習！」を配信中だった。13:39開始（20:43時点、約1,762人が視聴）</span>
+        <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">幕末志士・坂本</span><span class="lc-team">TEAM もこう</span></span>
+        <span class="lc-what"><b>PUBG</b>「ピエロのハイゲ練習三日目(ARC、PUBG、OW)」を配信中だった。18:03開始（20:49時点、約2,836人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="1593" href="https://www.twitch.tv/yunocy" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="1960" href="https://www.twitch.tv/yunocy" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_yunocy-440x248.jpg" alt="yunocyのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">yunocy</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>PUBG</b>「チーム練」を配信中だった。共演 しんじ、16:26開始（20:43時点、約1,593人が視聴）</span>
+        <span class="lc-what"><b>PUBG</b>「チーム練」を配信中だった。共演 しんじ、16:26開始（20:49時点、約1,960人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="1501" href="https://www.youtube.com/watch?v=lS58lN5y_aA" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="1754" href="https://www.twitch.tv/euriece" target="_blank" rel="noopener">
+        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_euriece-440x248.jpg" alt="EurieceのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
+        <span class="lc-body">
+        <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">Euriece</span><span class="lc-team">TEAM 関優太</span></span>
+        <span class="lc-what"><b>OW</b>「ハイゲ練習！」を配信中だった。13:39開始（20:49時点、約1,754人が視聴）</span>
+        <span class="lc-go">Twitchで観る →</span>
+        </span>
+      </a>
+<a class="live-card" data-viewers="1489" href="https://www.youtube.com/watch?v=lS58lN5y_aA" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://i.ytimg.com/vi/lS58lN5y_aA/hqdefault_live.jpg" alt="もこうのYouTube配信のサムネイル" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">もこう</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>ハイゲ練習</b>「ハイゲの練習！！！！！あと収録！」を配信中だった。20:00開始（20:43時点、約1,501人が視聴）</span>
+        <span class="lc-what"><b>ハイゲ練習</b>「ハイゲの練習！！！！！あと収録！」を配信中だった。20:00開始（20:49時点、約1,489人が視聴）</span>
         <span class="lc-go">YouTubeで観る →</span>
         </span>
       </a>
@@ -807,23 +825,23 @@
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_darkmasuotv-440x248.jpg" alt="MasuoのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">Masuo</span><span class="lc-team">HYG REVENGERS</span></span>
-        <span class="lc-what"><b>めっちゃカメレオン</b>「雑談してからめっちゃカメレオンをする！」を配信中だった。20:30開始（20:43時点、約586人が視聴）</span>
+        <span class="lc-what"><b>めっちゃカメレオン</b>「雑談してからめっちゃカメレオンをする！」を配信中だった。20:30開始（20:49時点、約586人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="412" href="https://www.twitch.tv/foy_honmono" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="449" href="https://www.twitch.tv/foy_honmono" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_foy_honmono-440x248.jpg" alt="ふぉいのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">ふぉい</span><span class="lc-team">TEAM k4sen</span></span>
-        <span class="lc-what"><b>スプラ3</b>「k4senさんチームで10年振りの息抜きスプラ」を配信中だった。20:25開始（再開、20:43時点、約412人が視聴）</span>
+        <span class="lc-what"><b>スプラ3</b>「k4senさんチームで10年振りの息抜きスプラ」を配信中だった。20:25開始（再開、20:49時点、約449人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
-<a class="live-card" data-viewers="164" href="https://www.twitch.tv/franciscoow" target="_blank" rel="noopener">
+<a class="live-card" data-viewers="185" href="https://www.twitch.tv/franciscoow" target="_blank" rel="noopener">
         <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_franciscoow-440x248.jpg" alt="ふらんしすこのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
         <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">ふらんしすこ</span><span class="lc-team">TEAM k4sen</span></span>
-        <span class="lc-what"><b>PUBG</b>「PUBGを支配する」を配信中だった。20:03開始（20:43時点、約164人が視聴）</span>
+        <span class="lc-what"><b>PUBG</b>「PUBGを支配する」を配信中だった。20:03開始（20:49時点、約185人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
         </span>
       </a>
@@ -1599,14 +1617,14 @@
 
   <!-- OSHI FILTER -->
   <section id="oshi">
-    <div class="sec-head"><h2>もっと詳しく見たい人向け — 推しフィルター</h2><span class="en">FIND YOUR TEAM</span></div>
+    <div class="sec-head"><h2>推しフィルター（ページ全体）</h2><span class="en">FIND YOUR TEAM</span></div>
     <div class="rule"></div>
-    <p class="sec-lead">「練習情報」と「バズ欄」をチーム・名前で絞り込めます。</p>
+    <p class="sec-lead">チームや名前で絞ると、このページ全体がそのチーム・その人だけの表示になります。</p>
 
     <div class="card" style="margin-bottom:20px">
       <span class="tag">絞り込み（フィルター）</span>
       <h3>チーム・メンバーで絞り込む</h3>
-      <p style="margin-bottom:14px">チームのボタンを押すと、「<a href="#practice">練習情報</a>」がそのチームだけになります。名前を入力すると、「<a href="#buzz">バズってるポスト・切り抜き</a>」とライブカードの中から、その名前が出てくるものだけが残ります。</p>
+      <p style="margin-bottom:14px">チームのボタンか名前の入力で絞ると、ライブ・切り抜き・練習情報のすべてが、そのチーム・その人だけの表示になります。</p>
       <div class="filter-chips" role="group" aria-label="チームで絞り込む">
         <button class="filter-chip" type="button" data-fteam="all" aria-pressed="true">すべてのチーム</button>
         <button class="filter-chip" type="button" data-fteam="k4sen" aria-pressed="false">TEAM k4sen</button>
@@ -2162,6 +2180,8 @@
   var resultsHead=document.getElementById('filterResultsHead');
   var resultsList=document.getElementById('filterResultsList');
   var resultsNone=document.getElementById('filterResultsNone');
+  var bannerEl=document.getElementById('filterBanner');
+  var bannerText=document.getElementById('filterBannerText');
   var openedByFilter=[];
   var hiddenByFilter=[];
   function norm(s){return (s||'').toLowerCase();}
@@ -2254,6 +2274,17 @@
         statusEl.textContent='絞り込み中：チーム＝'+teamLabels[curTeam]+(q?'／名前＝「'+q+'」':'')+'。練習情報 '+teamVisible+'チーム、配信・バズのカード '+buzzVisible+'件が表示中です。';
       }
     }
+    if(bannerEl&&bannerText){
+      if(!active){
+        bannerEl.hidden=true;
+      }else{
+        var what='';
+        if(curTeam!=='all'){what='『'+teamLabels[curTeam]+'』';}
+        if(q){what+=(what?'の':'')+'『'+q+'』さん';}
+        bannerText.textContent='いま'+what+'だけを表示しています';
+        bannerEl.hidden=false;
+      }
+    }
     // Show the matches right here in the filter panel, so the result is visible
     // without hunting through the long page.
     if(resultsBox&&resultsList&&resultsHead){
@@ -2316,15 +2347,16 @@
     });
   });
   if(searchEl){searchEl.addEventListener('input',applyFilter);}
-  var resetBtn=document.getElementById('filterReset');
-  if(resetBtn){
-    resetBtn.addEventListener('click',function(){
-      curTeam='all';
-      document.querySelectorAll('.filter-chip').forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-fteam')==='all'?'true':'false');});
-      if(searchEl){searchEl.value='';}
-      applyFilter();
-    });
+  function clearFilter(){
+    curTeam='all';
+    document.querySelectorAll('.filter-chip').forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-fteam')==='all'?'true':'false');});
+    if(searchEl){searchEl.value='';}
+    applyFilter();
   }
+  var resetBtn=document.getElementById('filterReset');
+  if(resetBtn){resetBtn.addEventListener('click',clearFilter);}
+  var bannerClearBtn=document.getElementById('filterBannerClear');
+  if(bannerClearBtn){bannerClearBtn.addEventListener('click',clearFilter);}
 
   // YouTube seamless facades: in view -> muted autoplay embed, out of view -> back to thumbnail.
   var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2684,6 +2716,15 @@ xvideos.forEach(function(v){v.setAttribute("playsinline","");v.preload="metadata
 <style>
 #live-total{margin:0 0 12px;padding:10px 14px;border-radius:12px;background:#e5484d;color:#fff;font-weight:900;font-size:16px;letter-spacing:.02em}
 #live-total small{display:block;font-weight:700;font-size:12px;opacity:.85;margin-top:2px}
+#live-total .lt-num{font-size:24px;font-weight:900}
+.lt-controls{margin-top:10px;display:flex;gap:8px}
+.lt-btn{flex:1;min-height:44px;border-radius:10px;border:2px solid rgba(255,255,255,.65);background:transparent;color:#fff;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit}
+.lt-btn.on{background:#fff;color:#c2262e;border-color:#fff}
+.live-card{position:relative}
+.lv-badge{position:absolute;top:8px;right:8px;background:rgba(2,10,30,.85);color:#fff;font-weight:900;font-size:15px;padding:5px 11px;border-radius:999px;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.4);z-index:3}
+.lv-badge i{font-style:normal;color:#ffd166;margin-right:4px}
+.live-card .lc-name{font-size:21px;font-weight:900;color:#fff;letter-spacing:.02em;line-height:1.25}
+.live-card .lc-team{font-size:12px;font-weight:700;opacity:.75}
 </style>
 <script>
 (function(){
@@ -2702,19 +2743,44 @@ function run(){
   if(cards.length<2)return;
   var items=cards.map(function(c,i){return{c:c,i:i,v:parseViewers(c)}});
   var total=0,counted=0;
-  items.forEach(function(it){if(it.v>=0){total+=it.v;counted++}});
-  items.sort(function(a,b){
-    if(a.v>=0&&b.v>=0)return b.v-a.v;
-    if(a.v>=0)return -1;
-    if(b.v>=0)return 1;
-    return a.i-b.i;
+  items.forEach(function(it){
+    if(it.v>=0){total+=it.v;counted++;
+      if(!it.c.querySelector(".lv-badge")){
+        var bd=document.createElement("span");bd.className="lv-badge";
+        bd.innerHTML="<i>視聴</i>"+it.v.toLocaleString("ja-JP")+"人";
+        it.c.appendChild(bd);
+      }
+    }
   });
-  items.forEach(function(it){grid.appendChild(it.c)});
+  var note=null,bDesc=null,bAsc=null;
+  function applySort(dir){
+    items.sort(function(a,b){
+      if(a.v>=0&&b.v>=0)return dir==="desc"?b.v-a.v:a.v-b.v;
+      if(a.v>=0)return -1;
+      if(b.v>=0)return 1;
+      return a.i-b.i;
+    });
+    items.forEach(function(it){grid.appendChild(it.c)});
+    if(note)note.textContent=dir==="desc"?"視聴者数が分かる配信の合計です。カードは視聴者数の多い順に並んでいます":"視聴者数が分かる配信の合計です。カードは視聴者数の少ない順に並んでいます";
+    if(bDesc)bDesc.classList.toggle("on",dir==="desc");
+    if(bAsc)bAsc.classList.toggle("on",dir==="asc");
+  }
+  applySort("desc");
   if(counted>0&&!document.getElementById("live-total")){
     var d=document.createElement("div");
     d.id="live-total";
-    d.innerHTML="全54人中 "+cards.length+"人が配信中 ・ 合計 約"+total.toLocaleString("ja-JP")+"人が視聴中<small>視聴者数が分かる配信の合計です。カードは視聴者数の多い順に並んでいます</small>";
+    d.innerHTML="全54人中 "+cards.length+"人が配信中 ・ 合計 <span class=\"lt-num\">約"+total.toLocaleString("ja-JP")+"人</span>が視聴中";
+    note=document.createElement("small");
+    d.appendChild(note);
+    var ctl=document.createElement("div");ctl.className="lt-controls";
+    bDesc=document.createElement("button");bDesc.className="lt-btn on";bDesc.type="button";bDesc.textContent="視聴者数が多い順";
+    bAsc=document.createElement("button");bAsc.className="lt-btn";bAsc.type="button";bAsc.textContent="視聴者数が少ない順";
+    bDesc.addEventListener("click",function(){applySort("desc")});
+    bAsc.addEventListener("click",function(){applySort("asc")});
+    ctl.appendChild(bDesc);ctl.appendChild(bAsc);
+    d.appendChild(ctl);
     grid.parentNode.insertBefore(d,grid);
+    applySort("desc");
   }
 }
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",run)}else{run()}
@@ -2771,6 +2837,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 .ht-panel{display:none}
 .ht-panel.ht-on{display:block}
 .ht-panel>*{scroll-margin-top:64px}
+.ht-hint{padding:8px 14px 2px;font-size:13px;color:#9fb4d8}
 body.ht-has-tabs nav.toc{display:none}
 </style>
 <script>
@@ -2783,10 +2850,12 @@ var GROUPS=[
 {key:"archive",label:"アーカイブ",ids:["digest"]},
 {key:"members",label:"メンバー",ids:["practice","oshi","teams"]}
 ];
-var panels={},bar=null,built=false;
+var panels={},bar=null,hint=null,built=false;
+var HINTS={live:"いま配信してる人の一覧です",multi:"チームの配信を大きい画面で一緒に見られます",clips:"おもしろい場面の切り抜きです",today:"今日あったことの速報です",archive:"過去の日の記録です",members:"出場者とチームの練習の様子です"};
 function activate(key,scroll){
 Object.keys(panels).forEach(function(k){panels[k].classList.toggle("ht-on",k===key)});
 if(bar)bar.querySelectorAll(".ht-tab").forEach(function(b){b.classList.toggle("ht-on",b.dataset.tab===key)});
+if(hint)hint.textContent=HINTS[key]||"";
 if(scroll&&bar)window.scrollTo(0,Math.max(0,bar.getBoundingClientRect().top+window.scrollY-0));
 }
 function panelOf(el){while(el&&el!==document.body){if(el.classList&&el.classList.contains("ht-panel"))return el;el=el.parentNode}return null}
@@ -2801,6 +2870,8 @@ var holder=document.createElement("div");holder.id="ht-holder";
 firstEl.parentNode.insertBefore(holder,firstEl);
 bar=document.createElement("div");bar.id="ht-tabs";
 holder.appendChild(bar);
+hint=document.createElement("div");hint.className="ht-hint";
+holder.appendChild(hint);
 var liveCount=document.querySelectorAll(".live-card").length;
 var firstKey=null;
 GROUPS.forEach(function(g){
