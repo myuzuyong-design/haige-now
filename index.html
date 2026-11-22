@@ -2305,5 +2305,73 @@ el.addEventListener("click",close);
   });
 })();
 </script>
+<!-- teamview -->
+<style>
+#teamview{margin:18px 0 6px;padding:16px;border-radius:18px;background:linear-gradient(180deg,rgba(255,43,214,.08),rgba(0,229,255,.06)),#0a1730;border:1px solid rgba(255,255,255,.14);color:#eaf4ff;font-family:"Optimistic AI VF",system-ui,sans-serif}
+#teamview h2{font-size:19px;margin:0 0 4px}
+#teamview .tv-sub{font-size:13px;color:#9fd8ff;margin:0 0 12px}
+#teamview .tv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+#teamview .tv-chip{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#eaf4ff;font-size:14px;cursor:pointer}
+#teamview .tv-chip.tv-on{background:linear-gradient(90deg,#ff2bd6,#00e5ff);color:#02122f;font-weight:800;border-color:transparent}
+#teamview .tv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+#teamview .tv-cell{background:#000;border-radius:12px;overflow:hidden}
+#teamview .tv-cell .tv-name{padding:8px 10px;font-size:14px;background:#0d1f3c;display:flex;justify-content:space-between;gap:8px}
+#teamview .tv-cell iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+#teamview .tv-none{font-size:14px;color:#cfe6ff}
+#teamview .tv-note{font-size:12px;color:#9fd8ff;margin-top:10px}
+</style>
+<script>
+(function(){
+function ready(fn){if(document.readyState!=="loading")fn();else document.addEventListener("DOMContentLoaded",fn)}
+ready(function(){
+var cards=document.querySelectorAll(".live-card");
+if(!cards.length)return;
+var members=[];
+cards.forEach(function(c){
+var href=c.getAttribute("href")||"";
+var m=href.match(/twitch\.tv\/([A-Za-z0-9_]+)/);
+if(!m)return;
+var nameEl=c.querySelector(".lc-name");
+var teamEl=c.querySelector(".lc-team");
+members.push({login:m[1],name:nameEl?nameEl.textContent.trim():m[1],team:teamEl?teamEl.textContent.trim():"その他"});
+});
+if(!members.length)return;
+var teams=[];
+members.forEach(function(x){if(teams.indexOf(x.team)===-1)teams.push(x.team)});
+var sec=document.createElement("section");
+sec.id="teamview";
+var gridId="tv-grid";
+sec.innerHTML='<h2>チーム別マルチビュー</h2><p class="tv-sub">いま配信中のメンバーを、チームごとに並べて同時視聴できます。チームを選んでください。</p><div class="tv-chips"></div><div class="tv-grid" id="'+gridId+'"></div><p class="tv-note">プレイヤーは音声なしで再生されます。音を出したい画面はタップして操作してください。同時表示は最大4画面までです。</p>';
+var anchor=document.getElementById("now");
+if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else document.body.appendChild(sec);
+var toc=document.querySelector(".toc-in");
+if(toc){var a=document.createElement("a");a.href="#teamview";a.textContent="マルチビュー";toc.appendChild(a)}
+var chips=sec.querySelector(".tv-chips");
+var grid=sec.querySelector("#"+gridId);
+var current=teams[0];
+function render(){
+chips.innerHTML="";
+teams.forEach(function(t){
+var b=document.createElement("button");
+b.className="tv-chip"+(t===current?" tv-on":"");
+var n=members.filter(function(x){return x.team===t}).length;
+b.textContent=t+"（"+n+"）";
+b.addEventListener("click",function(){current=t;render()});
+chips.appendChild(b);
+});
+grid.innerHTML="";
+var list=members.filter(function(x){return x.team===current}).slice(0,4);
+list.forEach(function(x){
+var cell=document.createElement("div");
+cell.className="tv-cell";
+var src="https://player.twitch.tv/?channel="+encodeURIComponent(x.login)+"&parent="+encodeURIComponent(location.hostname)+"&muted=true&autoplay=true";
+cell.innerHTML='<div class="tv-name"><span>'+x.name+'</span><a href="https://www.twitch.tv/'+x.login+'" target="_blank" rel="noopener" style="color:#9fd8ff">Twitchで開く</a></div><iframe src="'+src+'" allowfullscreen loading="lazy" title="'+x.name+'のTwitch配信"></iframe>';
+grid.appendChild(cell);
+});
+}
+render();
+});
+})();
+</script>
 </body>
 </html>
