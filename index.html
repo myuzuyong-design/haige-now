@@ -2392,5 +2392,84 @@ render();
 });
 })();
 </script>
+<!-- seamless -->
+<style>
+.bz-media{position:relative}
+.bz-media iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+.bz-media .bz-facade{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.bz-media .bz-playbtn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.bz-media .bz-playbtn span{width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.62);color:#fff;font-size:26px;display:flex;align-items:center;justify-content:center;padding-left:4px}
+.bz-media .bz-src{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.65);color:#fff;font-size:11px;padding:3px 8px;border-radius:999px}
+.bz-media .bz-clipph{display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#2a1454,#0d1f3c);color:#e9dcff;font-size:14px}
+.bz-media .bz-clipph b{font-size:26px}
+</style>
+<script>
+(function(){
+function ready(fn){if(document.readyState!=="loading")fn();else document.addEventListener("DOMContentLoaded",fn)}
+ready(function(){
+var HOST=encodeURIComponent(location.hostname);
+function wrapWithMedia(card,media){
+if(card.closest(".bz-wrap")){var w=card.closest(".bz-wrap");w.insertBefore(media,card);return}
+var w=document.createElement("div");w.className="bz-wrap";
+card.parentNode.insertBefore(w,card);w.appendChild(media);w.appendChild(card);
+}
+function makeMedia(html){var d=document.createElement("div");d.className="bz-media";d.innerHTML=html;return d}
+var jobs=[];
+document.querySelectorAll("a.buzz-card").forEach(function(card){
+var href=card.getAttribute("href")||"";
+var ym=href.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+if(!ym)return;
+var id=ym[1];
+var media=makeMedia('<img class="bz-facade" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="YouTube切り抜きのサムネイル" loading="lazy"><span class="bz-playbtn"><span>\u25B6</span></span><span class="bz-src">YouTube</span>');
+wrapWithMedia(card,media);
+jobs.push({el:media,kind:"yt",id:id});
+});
+document.querySelectorAll("div.buzz-card").forEach(function(card){
+var link=card.querySelector('a[href*="clips.twitch.tv/"]');
+if(!link)return;
+var cm=(link.getAttribute("href")||"").match(/clips\.twitch\.tv\/([A-Za-z0-9_-]+)/);
+if(!cm)return;
+var media=makeMedia('<div class="bz-clipph"><b>\u25B6</b><span>Twitch\u30AF\u30EA\u30C3\u30D7</span></div><span class="bz-src">Twitch</span>');
+wrapWithMedia(card,media);
+jobs.push({el:media,kind:"clip",id:cm[1]});
+});
+function loadJob(j,sound){
+if(j.kind==="yt"){
+j.el.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+j.id+'?autoplay=1&mute='+(sound?0:1)+'&playsinline=1&rel=0" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen title="YouTube\u5207\u308A\u629C\u304D\u52D5\u753B"></iframe>';
+}else if(j.kind==="clip"){
+j.el.innerHTML='<iframe src="https://clips.twitch.tv/embed?clip='+j.id+'&parent='+HOST+'&autoplay=true&muted='+(sound?"false":"true")+'" allowfullscreen title="Twitch\u30AF\u30EA\u30C3\u30D7"></iframe>';
+}
+j.loaded=true;
+}
+function unloadJob(j){
+if(!j.loaded)return;
+if(j.kind==="yt"){
+j.el.innerHTML='<img class="bz-facade" src="https://i.ytimg.com/vi/'+j.id+'/hqdefault.jpg" alt="YouTube切り抜きのサムネイル" loading="lazy"><span class="bz-playbtn"><span>\u25B6</span></span><span class="bz-src">YouTube</span>';
+}else if(j.kind==="clip"){
+j.el.innerHTML='<div class="bz-clipph"><b>\u25B6</b><span>Twitch\u30AF\u30EA\u30C3\u30D7</span></div><span class="bz-src">Twitch</span>';
+}
+j.loaded=false;
+}
+jobs.forEach(function(j){
+j.el.addEventListener("click",function(){if(!j.loaded)loadJob(j,true)});
+});
+var xvideos=document.querySelectorAll(".bz-media video");
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+var t=e.target;
+if(t.classList&&t.classList.contains("bz-media")){
+var j=jobs.find(function(x){return x.el===t});
+if(!j)return;
+if(e.isIntersecting){if(!j.loaded)loadJob(j,false)}else{unloadJob(j)}
+}else if(t.tagName==="VIDEO"){
+if(e.isIntersecting){t.muted=true;var p=t.play();if(p&&p.catch)p.catch(function(){})}else{t.pause()}
+}
+});
+},{threshold:0.55});
+jobs.forEach(function(j){io.observe(j.el)});
+xvideos.forEach(function(v){v.setAttribute("playsinline","");v.preload="metadata";io.observe(v)});
+});
+})();
+</script>
 </body>
 </html>
