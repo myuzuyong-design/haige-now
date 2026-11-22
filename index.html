@@ -305,6 +305,10 @@
   .title-entry li{margin:3px 0}
   .no-info{display:inline-block;font-size:13.5px;font-weight:700;color:var(--muted);background:var(--surface-2);border:1px dashed var(--line);border-radius:6px;padding:2px 9px}
   .pt-links{margin:2px 0 10px;font-size:14px}
+  .practice-team .pt-today{margin:0 0 10px;font-size:14.5px;font-weight:700;color:var(--ink);background:var(--surface-2);border-radius:8px;padding:8px 12px}
+  .practice-team .pt-today .pt-today-label{color:var(--accent);font-weight:900;margin-right:6px}
+  .practice-team .pt-noinfo{margin:12px 0 2px;font-size:14px;color:var(--muted)}
+  details.basic-fold>summary{cursor:pointer;font-weight:900;font-size:16.5px;min-height:48px;display:flex;align-items:center;color:var(--ink)}
   .ms-team{margin-bottom:20px}
   .ms-team>h3{margin:0 0 10px;font-size:18px;font-weight:900}
   .ms-team>h3 .dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--c);margin-right:8px}
@@ -659,7 +663,7 @@
     <a href="#history">過去大会</a>
     <a href="#tickets">チケット・視聴</a>
     <a href="#access">アクセス・持ち物</a>
-    <a href="#faq">FAQ</a>
+    <a href="#faq">公式リンク</a>
   </div>
 </nav>
 
@@ -1349,72 +1353,22 @@
   <section id="practice">
     <div class="sec-head"><span class="no">01</span><h2>チーム練習情報・推し決めガイド</h2><span class="en">PRACTICE</span></div>
     <div class="rule"></div>
-    <p class="sec-lead">ドラフト後の各チームの練習まとめ。11月19〜21日の3日間で練習アーカイブ<b style="color:var(--ink)">112本</b>（FollowBoard集計）。公式の担当表は未発表のため、「担当」は練習参加実績からの候補です。</p>
+    <p class="sec-lead">11/19〜21で練習配信<b style="color:var(--ink)">112本</b>。中心はDAY2のOverwatch。</p>
 
     <div class="badge-legend">
-      <h3>担当の見分け方 — 3つの印（バッジ）</h3>
-      <p><span class="role-badge rb-conf">確定</span> <b>決まっている担当。</b>大会のルールで決まっているもの（パワプロの投手はリーダー、など）や、本人がはっきり言ったものです。</p>
-      <p><span class="role-badge rb-est">推定</span> <b>練習の様子からの読み取り。</b>練習配信に参加していた実績から「担当候補」と読めるもので、公式の決定ではありません。</p>
-      <p><span class="role-badge rb-unk">未確認（情報なし）</span> <b>まだ情報がない担当。</b>練習でも確認できていない組み合わせです。分からないものを推測で埋めることはしません。</p>
+      <h3>担当表の見方</h3>
+      <p><span class="role-badge rb-conf">確定</span> ルールで決定／本人が明言した担当。<span class="role-badge rb-est">推定</span> 練習参加の実績からの候補で、公式の担当表は未発表。<span class="role-badge rb-unk">未確認（情報なし）</span> 練習でも確認できておらず、推測では埋めない。</p>
     </div>
 
-    <h3 style="margin:6px 0 12px;font-size:18px;font-weight:900">DAY2（11月29日・現地参戦）の形式と、スクリーンでの追い方</h3>
-    <div class="grid grid-2" style="margin-bottom:14px">
-      <div class="card">
-        <span class="tag">DAY 2 — 5人制トーナメント</span>
-        <h3>Overwatch</h3>
-        <p>1チーム5名×5チーム（4チーム＋REVENGERS）のトーナメントで、勝者はREVENGERSと追加ポイント戦。つまり各チームに事実上「OW担当5名」がいる。見切れ席では個人のエイムより、<b style="color:var(--ink)">ウルト（必殺技）の合わせと集団戦の勝敗</b>がスクリーンで追いやすい。練習で名前が挙がる5名がそのまま見どころになる。</p>
-      </div>
-      <div class="card">
-        <span class="tag">DAY 2 — トリオ×2レイド</span>
-        <h3>ARC Raiders</h3>
-        <p>各チーム3名トリオで30分のレイドを2回。<b style="color:var(--ink)">レイド間でメンバー変更可</b>（最大6名まで使える）。勝敗は全アイテム売却後の所持金＋経験値の合計。大会専用カスタムマッチが用意される。脱出できたか・いくら稼いだかが画面表示で分かりやすく、初見でも追いやすいタイトル。</p>
-      </div>
-      <div class="card">
-        <span class="tag">DAY 2 — 投手はリーダー</span>
-        <h3>パワフルプロ野球2026-2027</h3>
-        <p>3イニング制トーナメント（決勝は5イニング）。<b style="color:var(--ink)">投手は各チームのリーダー</b>（k4sen／SHAKA／もこう／関優太がマウンドに立つのはルールで確定）。代打要請時は元プロの桧山進次郎／内川聖一／T-岡田／和田一浩や加藤純一が代打参戦し、解説は赤星憲広。リーダーの投球と元プロの代打がそのまま見せ場になる。</p>
-      </div>
-      <div class="card">
-        <span class="tag">DAY 2 — 当日発表</span>
-        <h3>ハイパー枠（シークレット）</h3>
-        <p>両日とも当日解禁のため、担当・練習とも<b style="color:var(--ink)">情報なし</b>が確定情報。ただしk4senチームでは、初顔合わせ切り抜きに「Hyper Leak by k4sen（リーダーによるリーク）」の章があり、スプラトゥーン3を「練習の息抜き」で回す様子も切り抜き化された（あゆたろうは自己紹介でスプラ最高XP2400を実績に掲示）。公式に決まった話ではないが、シークレットがスプラ系なら一気に跳ねる布陣ではある。</p>
-      </div>
-    </div>
-    <div class="card" style="margin-bottom:22px">
-      <span class="tag">見切れ席メモ</span>
-      <h3>DAY2は「場内モニター＋手元の無料配信」の併用が前提</h3>
-      <p>見切れ席はステージやモニターが見えにくい席種で、専用モニターが用意される。本編はYouTube「mellow-fan【公式】」とTwitch「加藤純一」で無料配信されるため、当日はスマホで選手視点を補いながら追うのがおすすめ。練習配信で各選手の声や連携のクセを知っておくと、スクリーン越しでも「誰が何をしたか」が拾いやすくなる。</p>
-    </div>
-
-    <h3 style="margin:6px 0 12px;font-size:18px;font-weight:900">4チームの物語 — 推し決め早見</h3>
-    <div class="story-grid">
-      <div class="story-card" style="--c:var(--team-k4sen)">
-        <h3><span class="dot"></span>TEAM k4sen — 悲願の初優勝</h3>
-        <p>過去2回とも優勝なしのリーダーが、最後の大会に懸ける。1巡目指名は第1回と同じ<b>布団ちゃん</b>で、信頼関係は一貫。DAY2の鍵はHS（ヘッドショット系）特訓を公言する<b>柊ツルギ</b>の伸び。チームの空気感が切り抜きで一番追いやすい。</p>
-      </div>
-      <div class="story-card" style="--c:var(--team-shaka)">
-        <h3><span class="dot"></span>TEAM SHAKA — 初代王者の王座奪還</h3>
-        <p>第1回王者が、第2回最下位からの雪辱へ。ドラフトでは関優太と<b>たいじ・SPYGEAを取り合う因縁</b>が生まれた。rion／SPYGEA／ボドカらFPS特化編成で、ファン評は「FPSで負けなしすぎメンツ」。DAY2はrionの練習量と、かるびのタンクが鍵。</p>
-      </div>
-      <div class="story-card" style="--c:var(--team-mokou)">
-        <h3><span class="dot"></span>TEAM もこう — 前回王者と「絶望OW部」の逆襲劇</h3>
-        <p>連覇が懸かる一方、DAY2のOWは今大会最大のドラマ。ドラフト1位<b>Laz</b>を「VALORANTと勘違いして指名したのでは」とXで話題化し、リーダー不在の緊急会議で担当を決め、<b>連日10時間級の特訓</b>へ。格下と見られたチームがどこまで仕上がるかがDAY2最大の見どころ。</p>
-      </div>
-      <div class="story-card" style="--c:var(--team-seki)">
-        <h3><span class="dot"></span>TEAM 関優太 — 欠場リーダーの復帰戦</h3>
-        <p>第2回を活動休止で欠場したリーダーがFINALで復帰。関優太本人は<b>元Overwatchプロ</b>（OW World Cup 2016日本代表キャプテン）で、DAY2のOWは本人の種目。フルパ練習をYouTubeで連日公開し、練習の完成度が最も見えるチーム。作戦会議が「リークしまくる」オープンさも名物。</p>
-      </div>
-    </div>
 
     <div class="practice-team" data-team="k4sen" style="--c:var(--team-k4sen)">
       <div class="pt-head"><h3>TEAM k4sen</h3><span class="pt-sub">練習アーカイブ29本（11/19〜21、FollowBoard集計）</span></div>
-      <p class="story">ドラフト直後にチーム初顔合わせ配信が行われ、PUBG・WWE・カメレオンの担当相談まで切り抜きで公開された。<b>布団ちゃん</b>が面倒見の良い古参としてチーム作りを担い、DAY2は若手トリオ（ツルギ／ふらんしすこ／あゆたろう）の伸びしろに懸ける形。</p>
-      <p class="pt-links"><a href="https://www.youtube.com/watch?v=_7JkH-Cl_Io" target="_blank" rel="noopener">初顔合わせダイジェスト切り抜き（あゆたろう視点、YouTube）→</a></p>
+      <p class="pt-today"><span class="pt-today-label">今日の練習</span>ゆゆうたがWWE 2K26を特訓中。布団ちゃん・あゆたろう・ふぉいは息抜きでスプラトゥーン3。</p>
+      <p class="story">過去2回優勝なしのリーダーk4senが、最後の大会に懸ける。初顔合わせでは担当相談まで公開され、面倒見の良い<b>布団ちゃん</b>がチーム作りを担う。DAY2はHS特訓中の<b>柊ツルギ</b>ら若手トリオの伸びが鍵。</p>
 
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>Overwatch</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 担当候補は練習参加の実績からの読み取りです（5人目は <span class="role-badge rb-unk">未確認（情報なし）</span>）</p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>担当候補（練習参加者）：柊ツルギ、ふらんしすこ、あゆたろう、k4sen</b>（5人目は <span class="no-info">情報なし</span>）</p>
         <ul>
           <li>柊ツルギは「HSの神になるために特訓」と公言し、11月21日に約4時間17分＋第2枠の特訓。11月19日から連日長時間練習しており、DAY2のエース候補。</li>
@@ -1424,43 +1378,41 @@
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>ARC Raiders</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 柊ツルギの練習参加のみ確認 ／ トリオ編成は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>練習確認：柊ツルギのみ</b>（11月20日の配信タイトルに「ARC 2日目」と明記。カテゴリは裏ハイゲ向けCoD:MW4の特訓枠）。チームとしてのトリオ練習配信・トリオ編成は <span class="no-info">情報なし</span> — DAY2で最も読めないチーム×タイトル。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>パワフルプロ野球2026-2027</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 投手はk4sen（ルールで決定） ／ 練習参加者は <span class="role-badge rb-est">推定</span> ／ 野手の担当は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>投手：k4sen（ルールで確定）</b>。練習参加者はあゆたろう（「パワプロ練習する！！」11月21日）、ゆゆうた（「パワプロ 鬱練習」11月19日、集計で655分＝約11時間枠）、布団ちゃん（11月21日配信の冒頭で打球練習）。野手の担当は <span class="no-info">情報なし</span>。自嘲しながら長時間打ち込むゆゆうたの打席が応援どころ。</p>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d2">DAY2</span>ハイパー枠</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 当日発表のため担当は分かりません</p>
-        <p><span class="no-info">情報なし</span>（当日発表）。初顔合わせ切り抜きには「Hyper Leak by k4sen」の章立てがあり、リーダーの発言が話題化している（内容の真偽は未確認）。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>PUBG: BATTLEGROUNDS</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 全員が出場する形式です ／ ソロ担当は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>全員出場タイトル（各チーム10名＋ソロ1名、ソロ担当は <span class="no-info">情報なし</span>）。布団ちゃんが初心者寄りのFoyに教える構図が軸で、11月20日には本番形式を意識した「10＋1の模擬練習」も。Twitchクリップ「よしなま大覚醒」（11月20日）も切り抜きタブに掲載。11月22日朝もふらんしすこがPUBG配信中だった（11月22日時点のFollowBoard確認）。作戦会議は天月がドラフト夜に実施。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>めっちゃカメレオン</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> Foyの練習参加のみ確認 ／ 出場する2名は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>Foyがソロ練習（11月21日）。出場する各チーム2名の担当は <span class="no-info">情報なし</span>。本番のオリジナルMAPは当日朝まで練習できない。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>WWE 2K26</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> リーダー対決でk4senが出場（ルールで決定） ／ ゆゆうたは <span class="role-badge rb-est">推定</span> ／ 通常・女性対決の担当は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>ゆゆうたが「プロレス初見プレイ」（11月21日）で初見から特訓中。リーダー対決があるためk4senの出場はフォーマット上確実だが、本人の練習配信は <span class="no-info">情報なし</span>。通常対決・女性対決の担当も <span class="no-info">情報なし</span>。</p>
       </div>
+      <p class="pt-noinfo">11/19〜21時点で情報なし：DAY2 ハイパー枠（当日発表。初顔合わせ切り抜きに「Hyper Leak by k4sen」の章あり）</p>
+      <p class="pt-links">最新リンク：<a href="https://www.youtube.com/watch?v=_7JkH-Cl_Io" target="_blank" rel="noopener">初顔合わせダイジェスト切り抜き（あゆたろう視点、YouTube）→</a></p>
     </div>
 
     <div class="practice-team" data-team="shaka" style="--c:var(--team-shaka)">
       <div class="pt-head"><h3>TEAM SHAKA</h3><span class="pt-sub">練習アーカイブ28本（11/19〜21、FollowBoard集計）</span></div>
-      <p class="story">ドラフト直後、SHAKA自身が「担当ゲームの振り分けに頭を抱える」配信を行い、再生数56〜57万回と練習系動画でも上位に。<b>リーダーが一括で悩む人間味</b>と、FPSの重鎮を揃えた編成の対比がこのチームの味。赤見かるびは指名に「大興奮」のクリップが残るムードメーカー。</p>
+      <p class="pt-today"><span class="pt-today-label">今日の練習</span>恭一郎とごっちゃん@マイキーがARC Raidersを練習した。</p>
+      <p class="story">第1回王者が、第2回最下位からの雪辱へ。ドラフトでは関優太と<b>たいじ・SPYGEAを取り合う因縁</b>が生まれた。rion／SPYGEA／ボドカらFPS特化編成で、DAY2はrionの練習量と、かるびのタンクが鍵。</p>
 
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>Overwatch</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 担当候補は練習参加の実績からの読み取りです ／ SHAKA本人の出場は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>担当候補（練習参加者）：rion、らっしゃー、ごっちゃん@マイキー、SPYGEA、赤見かるび</b>。SHAKA本人のOW練習配信と出場可否は <span class="no-info">情報なし</span>。</p>
         <ul>
           <li>rionは「死ぬまでやる」（11月19日）「朝まで」（11月21日）と銘打つ長時間練習を連日。チームの練習量エース。</li>
@@ -1469,45 +1421,37 @@
         </ul>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d2">DAY2</span>ARC Raiders</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 担当・練習とも確認できませんでした</p>
-        <p><span class="no-info">情報なし</span> — 担当・練習とも確認できなかった。アーカイブ112本中にSHAKAチームのARCカテゴリ配信は見当たらず、FPSエース揃いでも本番まで編成が読めない。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>パワフルプロ野球2026-2027</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 投手はSHAKA（ルールで決定） ／ 伊織もえの練習参加は <span class="role-badge rb-est">推定</span> ／ 他のメンバーは <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>投手：SHAKA（ルールで確定）</b>。練習確認は伊織もえ「パワプロ雑談配信」（11月21日、約3.1時間の集計）のみ。他メンバーの練習・野手の担当は <span class="no-info">情報なし</span> で、4チーム中DAY2パワプロの情報が最も薄い。</p>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d2">DAY2</span>ハイパー枠</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 当日発表のため担当は分かりません</p>
-        <p><span class="no-info">情報なし</span>（当日発表）。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>PUBG: BATTLEGROUNDS</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 全員が出場する形式です ／ ソロ担当は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>全員出場タイトル（ソロ担当は <span class="no-info">情報なし</span>）。練習量の可視化は4チーム随一：SPYGEA（11月20日、Twitch／YouTube）、恭一郎（「隙間時間にぱぶじー」と連日複数枠の反復練習型）、rion、赤見かるび、ごっちゃん@マイキー。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>めっちゃカメレオン</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 練習参加者は確認できています ／ 出場する2名は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>赤見かるびが参加型で繰り返し練習し、11月19日には3時間48分の枠も。らっしゃー、ごっちゃん@マイキー、SPYGEAも練習参加。担当2名は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>WWE 2K26</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> リーダー対決でSHAKAが出場（ルールで決定） ／ 鈴木ノリアキは <span class="role-badge rb-est">推定</span>（本人の練習配信は未確認）</p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span></p>
         <p>鈴木ノリアキが「共に学ぶWWEとプロレスの歴史 本番用のデバイスにも変えた」（11月20日）と、プロレス自体から学ぶ下調べ型の準備。リーダー対決のSHAKA本人の練習は <span class="no-info">情報なし</span>。女性対決は伊織もえが有力候補と目されるが、確定の出典はないため <span class="no-info">情報なし</span> として扱う。</p>
       </div>
+      <p class="pt-noinfo">11/19〜21時点で情報なし：DAY2 ARC Raiders（担当・練習とも未確認）／DAY2 ハイパー枠（当日発表）</p>
+      <p class="pt-links">最新リンク：<a href="https://www.twitch.tv/dmf_kyochan" target="_blank" rel="noopener">恭一郎のTwitchチャンネル →</a></p>
     </div>
 
     <div class="practice-team" data-team="mokou" style="--c:var(--team-mokou)">
       <div class="pt-head"><h3>TEAM もこう</h3><span class="pt-sub">練習アーカイブ25本（11/19〜21、FollowBoard集計）</span></div>
-      <p class="story">最大の一次資料は、ドラフト直後に開かれた<b>リーダー不在の「OW緊急会議」</b>（Biju channel、約41万回再生）。もこう不在のままメンバーが自律的に担当を決めていく過程が全公開され、弱点から仕上げていく過程を配信で追えるのがこのチームの応援しどころ。えなこは第1回から<b>3大会連続でもこうチーム</b>で、抽選で交際を公表しているけんきも同チームに入りXでトレンド入りした。</p>
-      <p class="pt-links"><a href="https://kiokoi.livedoor.blog/archives/18043544.html" target="_blank" rel="noopener">LazをめぐるX投稿まとめ（OW緊急会議の役割発言）→</a>／<a href="https://coki.jp/?p=97868" target="_blank" rel="noopener">えなこの投稿・けんき同組の記事 →</a></p>
+      <p class="pt-today"><span class="pt-today-label">今日の練習</span>バトラが日課のパワプロ練習、けんきがPUBG練習、坂本がARC／OW／PUBGの横断練習。</p>
+      <p class="story">連覇が懸かる前回王者。DAY2のOWは今大会最大のドラマで、ドラフト1位<b>Laz</b>の騒動からリーダー不在の緊急会議で担当を決め、<b>連日10時間級の特訓</b>へ。格下と見られたチームの仕上がりが見どころ。</p>
 
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>Overwatch — 全チームで最もドラマがある</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 役割は緊急会議での話し合いの案です。公式の決定ではありません</p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span></p>
         <p><b>役割分担（緊急会議での議論としてX投稿まとめが伝えた案。公式決定ではない）</b></p>
         <ul>
           <li><b>ヒットスキャン（攻撃役）：Laz、Biju</b> — らいじんの発言「LazさんBijuさんにヒットスキャンでどうにかしてもらって」に基づく。</li>
@@ -1521,44 +1465,36 @@
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>ARC Raiders</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 坂本の練習参加のみ確認 ／ トリオの残りは <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>練習確認は<b>幕末志士・坂本</b>のみ（Twitchクリップ「坂本さん参戦」11月20日。練習タイトルにもArcを含み、ARC／OW／PUBGを横断練習）。トリオの残りメンバー・チーム練習の形は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>パワフルプロ野球2026-2027</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 投手はもこう（ルールで決定） ／ バトラの練習参加は <span class="role-badge rb-est">推定</span> ／ 野手の担当・もこう本人の投球練習は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>投手：もこう（ルールで確定）</b>。バトラが「まずは日課のパワプロ練習」と題して継続練習し、<b>2026年11月22日9:23 JST時点のFollowBoard確認ではライブ配信中だった</b>（約3,988人視聴）。4チームのパワプロ練習者で最も継続性が明示されている。野手の担当・もこう本人の投球練習は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d2">DAY2</span>ハイパー枠</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 当日発表のため担当は分かりません</p>
-        <p><span class="no-info">情報なし</span>（当日発表）。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>PUBG: BATTLEGROUNDS</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 全員が出場する形式です ／ ソロ担当・チーム練習の形は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>全員出場タイトル（ソロ担当は <span class="no-info">情報なし</span>）。yunocy（「もこうチームがんばります！」11月20日）、坂本、Lazらが練習。チーム単位のフルパ練習は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d1">DAY1</span>めっちゃカメレオン</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 担当・練習とも確認できませんでした</p>
-        <p><span class="no-info">情報なし</span> — 担当・練習とも確認できなかった（アーカイブ25本中に本作カテゴリの枠なし）。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>WWE 2K26</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> しんじ・yunocyの練習参加からの読み取りです ／ もこう本人・女性枠の担当は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>しんじが「WWE攻略最前線TV」（11月20日、114分・208分枠の記録）と銘打つ研究型で担当候補の筆頭。しんじは同日に13時間30分の配信記録もあり、チームの実務を担う“中間管理職”的存在。yunocyもドラフト夜にWWEカテゴリ。もこう本人の練習・女性枠の担当は <span class="no-info">情報なし</span>。</p>
       </div>
+      <p class="pt-noinfo">11/19〜21時点で情報なし：DAY1 めっちゃカメレオン（担当・練習とも未確認）／DAY2 ハイパー枠（当日発表）</p>
+      <p class="pt-links">最新リンク：<a href="https://kiokoi.livedoor.blog/archives/18043544.html" target="_blank" rel="noopener">LazをめぐるX投稿まとめ（OW緊急会議の役割発言）→</a></p>
     </div>
 
     <div class="practice-team" data-team="seki" style="--c:var(--team-seki)">
       <div class="pt-head"><h3>TEAM 関優太</h3><span class="pt-sub">練習アーカイブ21本（11/19〜21、FollowBoard集計）</span></div>
-      <p class="story">練習の発信拠点は<b>渋谷ハル</b>（YouTube）で、チーム練習が最も「見える化」されている。作戦会議の内容が次々表に出るオープンさもチームカラーで、会議動画「リークしまくるチーム関」は約38.3万回再生。ドラフトではSHAKAとの競合の末に<b>たいじ</b>を獲得し、たいじは「関優太チームのために全てを出す」と宣言する動画（約41.2万回再生）も話題に。</p>
-      <p class="pt-links"><a href="https://www.youtube.com/watch?v=qGYkmSJk5Do" target="_blank" rel="noopener">切り抜き「ラインハルトにぶっ刺さるメイの可能性に気付いた関チーム一同」（YouTube）→</a></p>
+      <p class="pt-today"><span class="pt-today-label">今日の練習</span>関優太がWWE 2K26、たいじがパワプロ打撃、EurieceがOverwatchを練習。</p>
+      <p class="story">第2回を欠場したリーダーがFINALで復帰。<b>関優太</b>は元Overwatchプロで、DAY2のOWは本人の種目。渋谷ハル拠点でフルパ練習を連日公開し、作戦会議が「リークしまくる」オープンさも名物。</p>
 
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>Overwatch — 練習の組織度が最も高い</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> 担当候補は練習参加の実績からの読み取りです（5枠を複数人で入れ替え検証中）</p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span></p>
         <p><b>担当候補（練習参加者）：関優太、渋谷ハル、すもも、あっさりしょこ、Zerost、Euriece、misaco</b></p>
         <ul>
           <li>渋谷ハルがフルパ練習をYouTubeで連日公開：11月20日は関優太／SUMOMO／Zerost／あっさりしょこ、11月21日は<b>Zerost→Eurieceに入れ替えて</b>実施（約4時間29分、約7.7万回表示）＝5枠を6名で回す入れ替え検証の形跡。</li>
@@ -1569,216 +1505,38 @@
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>ARC Raiders</h4>
-        <p class="badge-row"><span class="role-badge rb-est">推定</span> すもも・あっさりしょこの練習参加からの読み取りです ／ トリオの確定編成は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>練習確認は<b>すもも</b>（11月20日「ハイゲに向けて練習いくぞ」。作戦会議枠もあり作戦面でも動く）と<b>あっさりしょこ</b>（11月21日）で、4チーム中もっとも痕跡が多い。トリオの確定編成は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>パワフルプロ野球2026-2027</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 投手は関優太（ルールで決定） ／ Eurieceの練習参加は <span class="role-badge rb-est">推定</span> ／ 野手の担当・関優太本人の投球専用枠は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><b>投手：関優太（ルールで確定）</b>。Eurieceが11月21日に練習（共演表示は関優太／渋谷ハル／あっさりしょこ＝WWE練習組と同メンバーで回している様子）。APEX国内トップ層のEurieceの野球ゲーム適応が見どころ。関優太本人の投球専用枠・野手の担当は <span class="no-info">情報なし</span>。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d2">DAY2</span>ハイパー枠</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> すもも分のみ本人の発言として記録あり ／ 他のメンバーは <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p><span class="no-info">情報なし</span>（当日発表）。なお、すももはドラフト初見視聴配信で「関さんのチームでPUBGとHYPER1に出る」と語ったとまとめサイトが記録しており、本人の出場宣言として確認できる数少ない担当情報ではある。</p>
       </div>
       <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>PUBG: BATTLEGROUNDS</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> 全員が出場する形式です。すももは本人が「出る」と発言 ／ こく兄の練習参加は <span class="role-badge rb-est">推定</span> ／ 他のメンバーの専用枠は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>全員出場タイトル（ソロ担当は <span class="no-info">情報なし</span>）。こく兄が11月22日に「【PUBG】練習←スプラ3←WWE」とDAY1種目を横断練習（11月22日に配信中を確認）。他メンバーのPUBG専用枠は <span class="no-info">情報なし</span>（練習がOWとパワプロ／WWEに寄っている）。</p>
       </div>
       <div class="title-entry">
-        <h4><span class="day-chip d1">DAY1</span>めっちゃカメレオン</h4>
-        <p class="badge-row"><span class="role-badge rb-unk">未確認（情報なし）</span> 担当・練習とも確認できませんでした</p>
-        <p><span class="no-info">情報なし</span> — 担当・練習とも確認できなかった。</p>
-      </div>
-      <div class="title-entry">
         <h4><span class="day-chip d1">DAY1</span>WWE 2K26</h4>
-        <p class="badge-row"><span class="role-badge rb-conf">確定</span> リーダー対決で関優太が出場（ルールで決定） ／ 練習参加者は <span class="role-badge rb-est">推定</span> ／ 最終の3名編成は <span class="role-badge rb-unk">未確認（情報なし）</span></p>
+        <p class="badge-row"><span class="role-badge rb-conf">確定</span> <span class="role-badge rb-est">推定</span> <span class="role-badge rb-unk">未確認（情報なし）</span></p>
         <p>関優太が「プロレス練習」（11月21日、集計で671分枠）にEuriece／あっさりしょこ／渋谷ハルが合流。リーダーが最も目に見えて練習しているタイトル。ただし3名の最終編成は <span class="no-info">情報なし</span>。女性対決があるため、あっさりしょこ等の出場可能性はあるが公式発表はない。</p>
       </div>
+      <p class="pt-noinfo">11/19〜21時点で情報なし：DAY1 めっちゃカメレオン（担当・練習とも未確認）</p>
+      <p class="pt-links">最新リンク：<a href="https://www.youtube.com/watch?v=qGYkmSJk5Do" target="_blank" rel="noopener">切り抜き「ラインハルトにぶっ刺さるメイの可能性に気付いた関チーム一同」（YouTube）→</a></p>
     </div>
 
     <div class="card" style="margin-bottom:26px">
       <span class="tag">スクリムについて</span>
       <h3>対外スクリム（チーム同士の練習試合）は全チーム「情報なし」</h3>
-      <p>11月22日時点で、チーム対チームの練習試合を実施したとタイトル・日時入りで確認できた事例はなかった。確認できたのはチーム内フルパーティ／少人数トリオ／個人練習／作戦会議まで。本番までの最新の練習配信・切り抜きは、非公式ファン集計のFollowBoardで日別・チーム別に追える。</p>
+      <p>11月22日時点で、チーム同士の練習試合を確認できた事例はなし。確認できたのはチーム内フルパ／トリオ／個人練習／作戦会議まで。最新の練習配信・切り抜きはFollowBoardで日別・チーム別に追える。</p>
       <p style="margin-top:10px"><a href="https://followboard.jp/events/hyper-game-event-final" target="_blank" rel="noopener">FollowBoard イベントページ（アーカイブ／切り抜き）→</a></p>
-    </div>
-
-    <h3 style="margin:26px 0 6px;font-size:19px;font-weight:900">配信者別・最新の練習配信＆切り抜き</h3>
-    <p style="color:var(--muted);font-size:14.5px;margin:0 0 16px;max-width:820px">メンバーごとに、直近の練習配信・切り抜き・話題ポストを新しい順に並べた。出典は調査レポートとFollowBoard集計（11月22日午前時点）。アーカイブは<a href="https://followboard.jp/events/hyper-game-event-final?tab=archives" target="_blank" rel="noopener">FollowBoard</a>で確認できる。</p>
-
-    <div class="ms-team" data-team="k4sen" style="--c:var(--team-k4sen)">
-      <h3><span class="dot"></span>TEAM k4sen</h3>
-      <ul class="ms-list">
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/indegnasen0706" target="_blank" rel="noopener"><span class="who">布団ちゃん <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>スーパーマリオメーカー2</b>「息抜きマリオメーカー２」をライブ配信中だった（息抜き配信、16:44開始、19:41時点 約20,298人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>PUBG</b>「ふぉいにPUBを教える←…」（Foyへの指導枠、冒頭はパワプロ打球練習）</span>
-          <span class="ev"><span class="d">11/20</span><b>PUBG</b>「10＋1の模擬練習」／Twitchクリップ「よしなま大覚醒」</span>
-          <span class="ev"><span class="d">11/19</span><b>PUBG</b>「ゆゆうたとPUBG」</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">柊ツルギ</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「HSの神になるために特訓」（約4時間17分＋第2枠）</span>
-          <span class="ev"><span class="d">11/20</span><b>ARC Raiders</b>「COD特訓 死ぬまでやる ARC 2日目」（タイトルにARC明記）</span>
-          <span class="ev"><span class="d">11/19</span><b>Overwatch</b>「ハイゲ優勝するために、OW特訓 最高ランク更新する」</span></li>
-        <li><span class="who">ふらんしすこ</span>
-          <span class="ev"><span class="d">11/22朝</span><b>PUBG</b>「ちょっとだけPUBG」を配信中だった（10:38時点 約277人視聴、共演 k4sen・あゆたろう）。11:13時点では配信終了を確認</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「OWやるぞ w/ツルギ あゆたろうさん」／<b>PUBG</b>「ちょっとだけPUBG」</span>
-          <span class="ev"><span class="d">11/19</span><b>Overwatch</b>「俺はOWで輝きます。全部破壊」</span>
-          <span class="ev"><a href="https://www.twitch.tv/franciscoow" target="_blank" rel="noopener">ふらんしすこのTwitchチャンネル →</a></span></li>
-        <li class="live" style="padding:12px 14px"><span class="who">あゆたろう <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Just Chatting</b>「k4sen㌠いろいろ練習してゆく残り6日！」をライブ配信中だった（19:41時点 約2,607人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「OW練習会k4sen㌠ 柊ツルギさん、ふらんしすこさん」／<b>パワプロ</b>「パワプロ練習する！！」</span>
-          <span class="ev"><span class="d">11/19</span>切り抜き「チームk4sen #1 初顔合わせダイジェスト」（<a href="https://www.youtube.com/watch?v=_7JkH-Cl_Io" target="_blank" rel="noopener">YouTube</a>、担当相談の章立てあり）</span>
-          <span class="ev"><a href="https://www.twitch.tv/ayutarochan" target="_blank" rel="noopener">あゆたろうのTwitchの配信ページへ →</a></span></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/yuyuta0702" target="_blank" rel="noopener"><span class="who">ゆゆうた <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>WWE 2K26</b>「プロレスガッツリいこう」をライブ配信中だった（19:41時点 約6,654人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>WWE 2K26</b>「プロレス初見プレイ」</span>
-          <span class="ev"><span class="d">11/19</span><b>パワプロ</b>「パワプロ 鬱練習」（集計で655分枠）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/foy_honmono" target="_blank" rel="noopener"><span class="who">ふぉい（Foy） <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Splatoon 3</b>「k4senさんチームで10年振りの息抜きスプラ」をライブ配信中だった（19:16開始、19:41時点 約713人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>めっちゃカメレオン</b>「ソロカメレオン」／布団ちゃんの<b>PUBG</b>指導枠に参加</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">よしなま</span>
-          <span class="ev"><span class="d">11/21</span><b>PUBG</b>「ハイゲチームでPUBG」</span></li>
-        <li><span class="who">天月</span>
-          <span class="ev"><span class="d">11/19</span><b>作戦会議</b>「FFL本番→ハイゲ作戦会議」</span></li>
-        <li><span class="who">k4sen（リーダー）</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b> 練習会に参加（共演表示）。単独の練習配信タイトルは確認できず</span></li>
-        <li><span class="who">ゆふな／RaMu</span>
-          <span class="ev">個別の練習配信は <b>情報なし</b>（RaMuはドラフト同時視聴枠がカメレオンカテゴリで登録されたのみ）</span></li>
-      </ul>
-    </div>
-
-    <div class="ms-team" data-team="shaka" style="--c:var(--team-shaka)">
-      <h3><span class="dot"></span>TEAM SHAKA</h3>
-      <ul class="ms-list">
-        <li><span class="who">rion</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ハイゲ練習 朝まで」</span>
-          <span class="ev"><span class="d">11/20</span><b>PUBG</b>「ハイゲ練習 死ぬまでやる」</span>
-          <span class="ev"><span class="d">11/19</span><b>Overwatch</b>「ハイゲ練習 OW 死ぬまでやる」</span></li>
-        <li><span class="who">SPYGEA</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ハイゲの練習をしていく！！」（YouTube）</span>
-          <span class="ev"><span class="d">11/20</span><b>PUBG</b> 練習（Twitch／YouTube）／Twitchクリップ「ow出てこいよツルギ」（ツルギへの挑発）</span>
-          <span class="ev"><span class="d">11/19</span><b>めっちゃカメレオン</b>「ハイゲのゲーム練習するか」</span></li>
-        <li><span class="who">赤見かるび</span>
-          <span class="ev"><span class="d">11/21</span><b>PUBG</b>「PUBGれんしう」</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b> 3時間35分→<b>PUBG</b> 1時間44分→<b>カメレオン</b>参加型52分（<a href="https://streamrecorder.io/twitch/akamikarubi" target="_blank" rel="noopener">配信履歴</a>）</span>
-          <span class="ev"><span class="d">11/19</span><b>めっちゃカメレオン</b> 参加型 3時間48分／クリップ「釈迦に選ばれて大興奮」</span>
-          <span class="ev"><a href="https://www.twitch.tv/akamikarubi" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
-        <li><span class="who">恭一郎</span>
-          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ぱぶじー → ARC」（PUBGからARCへ移行）を配信していた（18:08時点では配信終了を確認）</span>
-          <span class="ev"><span class="d">11/20–21</span><b>PUBG</b>「ぱぶじー」「隙間時間にぱぶじー」を連日複数枠</span>
-          <span class="ev"><a href="https://www.twitch.tv/dmf_kyochan" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
-        <li><span class="who">ごっちゃん@マイキー</span>
-          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ハイゲ練習 ARC練習」を配信していた（18:08時点では配信終了を確認）</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「ハイゲ練習」／深夜は<b>めっちゃカメレオン</b></span>
-          <span class="ev"><span class="d">11/19</span><b>PUBG</b>「ストグラSeason2→PUBG練習」</span>
-          <span class="ev"><a href="https://www.twitch.tv/gocchanmikey" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
-        <li><span class="who">らっしゃー</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ハイゲ練習」</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「OW練習。」</span>
-          <span class="ev"><span class="d">11/19</span><b>めっちゃカメレオン</b>「ハイゲ練習！！チーム釈迦」</span></li>
-        <li><span class="who">鈴木ノリアキ</span>
-          <span class="ev"><span class="d">11/20</span><b>WWE 2K26</b>「共に学ぶWWEとプロレスの歴史 本番用のデバイスにも変えた」</span></li>
-        <li><span class="who">伊織もえ</span>
-          <span class="ev"><span class="d">11/21</span><b>パワプロ</b>「パワプロ雑談配信」（約3.1時間の集計）</span></li>
-        <li><span class="who">SHAKA（リーダー）</span>
-          <span class="ev"><span class="d">11/19–20</span>YouTube「担当ゲームの振り分けに頭を抱えるSHAKA」（56〜57万回再生）／雑談枠「ハイゲチームきまった」。OW練習配信は確認できず</span></li>
-        <li><span class="who">ボドカ／わいわい</span>
-          <span class="ev">個別の練習配信は <b>情報なし</b></span></li>
-      </ul>
-    </div>
-
-    <div class="ms-team" data-team="mokou" style="--c:var(--team-mokou)">
-      <h3><span class="dot"></span>TEAM もこう</h3>
-      <ul class="ms-list">
-        <li><span class="who">Laz</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「なんかおきろ 絶望OW部」</span>
-          <span class="ev"><span class="d">11/22</span>「なんかおきろ 絶望OW部」（12時間18分）は11月22日午前に終了しアーカイブ化された（10:38確認時点ではオフライン）</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「一筋の光を探す 絶望OW部」（10時間02分）</span>
-          <span class="ev"><span class="d">11/19</span><b>Overwatch</b>含む 11時間37分枠（<a href="https://streamers.ludens.com.tw/en/channel/lazvell" target="_blank" rel="noopener">Twitch統計</a>）</span>
-          <span class="ev"><a href="https://www.twitch.tv/lazvell" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/batora324" target="_blank" rel="noopener"><span class="who">バトラ <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Splatoon 3</b>「日課のパワプロ練習→息抜きスプラXマッチ」をライブ配信中だった（パワプロの日課練習からスプラへ移行、19:41時点 約5,616人視聴）</span>
-          <span class="ev"><span class="d">11/19</span><b>Overwatch</b>「オーバーウォッチやてみる」（集計で578分枠）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/kenki521" target="_blank" rel="noopener"><span class="who">けんき <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>PUBG: BATTLEGROUNDS</b>「ハイゲ練習」をライブ配信中だった（17:32頃開始、19:41時点 約2,674人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ow」</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「OW」／「サポ」（サポート練習）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">Biju</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ハンターハンター神」</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「ヴェンデッタ極」／YouTube「【ハイゲ緊急会議】もこうリーダー不在の中、担当ゲームを決めるBijuたち」（約41万回再生）</span></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/bakumatsu_shishi" target="_blank" rel="noopener"><span class="who">幕末志士・坂本 <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ピエロのハイゲ練習三日目(ARK、PUBG、OW)」を配信中（18:03開始、19:41時点 約2,183人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ピエロのハイゲ練習二日目(OW)」</span>
-          <span class="ev"><span class="d">11/20</span><b>PUBG</b>「ピエロのハイゲ練習①(Arc,OW,PUBG)」／Twitchクリップ「坂本さん参戦」（<b>ARC Raiders</b>）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/shinjifromjapanxd" target="_blank" rel="noopener"><span class="who">しんじ <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Splatoon 3</b>「ガチ初見2日目 ランク！」をライブ配信中だった（19:41時点 約3,531人視聴）</span>
-          <span class="ev"><span class="d">11/20</span><b>WWE 2K26</b>「WWE攻略最前線TV」（114分・208分枠の記録）／切り抜き「このままではOWのタンクになりそうで絶望するしんじ」（約31.9万回再生）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/yunocy" target="_blank" rel="noopener"><span class="who">yunocy <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>WWE 2K26</b>「初見です」をライブ配信中だった（19:41時点 約1,098人視聴）</span>
-          <span class="ev"><span class="d">11/20</span><b>PUBG</b>「もこうチームがんばります！」「リングに立ち続ける」</span>
-          <span class="ev"><span class="d">11/19</span><b>WWE 2K26</b>「緊張してきた、、」（WWEカテゴリ）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">えなこ</span>
-          <span class="ev"><span class="d">11/19</span>X投稿「ハイゲファイナルも『もこうチーム』で頑張ります！…FF14休んでOW戻ります」（<a href="https://coki.jp/?p=97868" target="_blank" rel="noopener">記事経由の引用</a>）</span>
-          <span class="ev"><span class="d">—</span>YouTube Shorts「えなこに怯えるBiju【けんき/えなこ/Biju/Laz】」（<a href="https://www.youtube.com/shorts/0bxLUyShMWY" target="_blank" rel="noopener">Shorts</a>）</span></li>
-        <li class="live"><a class="card-link" href="https://kick.com/mokoutoaruotoko" target="_blank" rel="noopener"><span class="who">もこう（リーダー） <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Just Chatting</b>「王の帰還」をKickでライブ配信中だった（18:28開始、19:41時点 約1,500人視聴）</span>
-          <span class="ev"><span class="d">11/21</span>Kick雑談枠「ハイゲやばい」</span>
-          <span class="ev"><span class="d">11/20</span>Twitchクリップ「『OWのこと考えてなかった…💦』」公開（Laz配信）。タイトル別の本人の練習配信は情報なし</span>
-          <span class="tap-hint">タップでKickの配信ページへ →</span></a></li>
-        <li><span class="who">らいじん／スタンミじゃぱん</span>
-          <span class="ev">らいじんはOW緊急会議でタンク担当の発言（Xまとめ経由）。2人とも個別の練習配信は <b>情報なし</b></span></li>
-      </ul>
-    </div>
-
-    <div class="ms-team" data-team="seki" style="--c:var(--team-seki)">
-      <h3><span class="dot"></span>TEAM 関優太</h3>
-      <ul class="ms-list">
-        <li><span class="who">こく兄</span>
-          <span class="ev"><span class="d">11/22</span><b>WWE 2K26</b>「11/22【WWE2K26】こくは譲らん！求めよ！」が最新配信（11:40時点では配信終了）</span>
-          <span class="ev"><span class="d">11/22</span><b>ROB RUN</b>「11/22【ROBRUN】デイリー←練習←スプラ３←WWE」を配信していた（10:36時点 約3,044人視聴）</span>
-          <span class="ev"><a href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
-        <li><span class="who">渋谷ハル</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「関チーム オーバーウォッチ練習 w/ 関優太 SUMOMO Euriece あっさりしょこ」（YouTube、約4時間29分・約7.7万回表示）</span>
-          <span class="ev"><span class="d">11/21</span>切り抜き「ラインハルトにぶっ刺さるメイの可能性に気付いた関チーム一同」（<a href="https://www.youtube.com/watch?v=qGYkmSJk5Do" target="_blank" rel="noopener">YouTube</a>、約5.8万回表示）</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b> 練習（w/ 関優太 SUMOMO Zerost あっさりしょこ、4時間超）</span></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/stylishnoob4" target="_blank" rel="noopener"><span class="who">関優太（リーダー） <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>WWE 2K26</b>「魂のプロレスラーを見つける。」をTwitchでライブ配信中（19:41時点、約11,208人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>WWE 2K26</b>「プロレス練習」（共演 Euriece／あっさりしょこ／渋谷ハル、集計で671分枠）</span>
-          <span class="ev"><span class="d">11/19–21</span><b>Overwatch</b> 練習 412分／560分級の枠（集計）／作戦会議動画「リークしまくるチーム関」（約38.3万回再生）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/euriece" target="_blank" rel="noopener"><span class="who">Euriece <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Overwatch</b>「ハイゲ練習！」をライブ配信中だった（19:41時点 約1,727人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>パワプロ</b>「ハイゲ練習！！！！」（共演 関優太／渋谷ハル／あっさりしょこ）／OW練習・WWE練習にも参加</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/assarisyoko1" target="_blank" rel="noopener"><span class="who">あっさりしょこ <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>Splatoon 3</b>「なにかするゲームする」をライブ配信中だった（19:41時点 約2,735人視聴）</span>
-          <span class="ev"><span class="d">11/21</span><b>ARC Raiders</b>「なにかする」／<b>Overwatch</b> 練習に参加（11/20・21）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">すもも</span>
-          <span class="ev"><span class="d">11/22</span><b>パワプロ</b>「ハイゲ設定でパワプロ人生プレイ」を配信していた（18:08時点では配信終了を確認）</span>
-          <span class="ev"><span class="d">11/21</span><b>作戦会議</b> 枠</span>
-          <span class="ev"><span class="d">11/20</span><b>ARC Raiders</b>「ハイゲに向けて練習いくぞ」</span></li>
-        <li><span class="who">Zerost</span>
-          <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「関優太チームでOWの練習する」</span></li>
-        <li><span class="who">misaco</span>
-          <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「ハイゲ種目の練習→…」（OW表示）</span></li>
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/yaritaiji" target="_blank" rel="noopener"><span class="who">たいじ <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>パワフルプロ野球2026-2027</b>「まずは打撃連」をライブ配信中だった（18:41開始、19:41時点 約9,797人視聴）</span>
-          <span class="ev"><span class="d">11/20</span>YouTube「たいじ、関優太チームのために全てを出す事を宣言！」（約41.2万回再生）。個別の練習配信は情報なし</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
-        <li><span class="who">みゃこ／おにや</span>
-          <span class="ev">みゃこはTwitchクリップ「みゃこ、大リークをかます」（11/20、たいじ配信）。2人とも個別の練習配信は <b>情報なし</b></span></li>
-      </ul>
     </div>
   </section>
 
@@ -1791,7 +1549,7 @@
     <div class="card" style="margin-bottom:20px">
       <span class="tag">絞り込み（フィルター）</span>
       <h3>チーム・メンバーで絞り込む</h3>
-      <p style="margin-bottom:14px">チームのボタンを押すと、「<a href="#practice">練習情報</a>」のチーム別リストがそのチームだけになります。名前を入力すると、練習リストと「<a href="#buzz">バズってるポスト・切り抜き</a>」の中から、その名前が出てくるものだけが残ります。</p>
+      <p style="margin-bottom:14px">チームのボタンを押すと、「<a href="#practice">練習情報</a>」がそのチームだけになります。名前を入力すると、「<a href="#buzz">バズってるポスト・切り抜き</a>」とライブカードの中から、その名前が出てくるものだけが残ります。</p>
       <div class="filter-chips" role="group" aria-label="チームで絞り込む">
         <button class="filter-chip" type="button" data-fteam="all" aria-pressed="true">すべてのチーム</button>
         <button class="filter-chip" type="button" data-fteam="k4sen" aria-pressed="false">TEAM k4sen</button>
@@ -1803,7 +1561,7 @@
       <input class="filter-search" id="memberSearch" type="search" placeholder="名前を入力すると絞り込まれます" autocomplete="off" />
       <p class="filter-status" id="filterStatus" aria-live="polite">いまは絞り込んでいません。全部表示されています。</p>
       <button class="filter-reset" id="filterReset" type="button">絞り込みをやめて全部見る</button>
-      <p style="margin-top:12px;margin-bottom:0">絞り込んだら、<a href="#practice">練習情報のリスト</a>と<a href="#buzz">バズ欄</a>へ移動して確認してください。</p>
+      <p style="margin-top:12px;margin-bottom:0">絞り込んだら、<a href="#practice">練習情報</a>と<a href="#buzz">バズ欄</a>へ移動して確認してください。</p>
     </div>
 
   </section>
@@ -1836,6 +1594,8 @@
   <section id="schedule">
     <div class="sec-head"><span class="no">03</span><h2>日程・スケジュール</h2><span class="en">SCHEDULE</span></div>
     <div class="rule"></div>
+    <details class="basic-fold">
+      <summary>DAY1は11/28（土）14:30開演、DAY2は11/29（日）13:00開演 — 会場は東京ドーム（詳しく見る）</summary>
     <div class="grid grid-2">
       <div class="card day-card">
         <p class="date">11.28 <small>SAT — DAY 1</small></p>
@@ -1894,6 +1654,7 @@
         <p><b>配信者ハイパーゲーム大会 FINAL。</b>東京ドーム2DAYS。本編は無料配信あり。</p>
       </li>
     </ul>
+    </details>
   </section>
 
   <!-- VIEWING GUIDE -->
@@ -1920,16 +1681,12 @@
       </div>
     </div>
 
-    <h3 style="margin:6px 0 12px;font-size:19px;font-weight:900">当日の時間割</h3>
+    <h3 style="margin:6px 0 12px;font-size:19px;font-weight:900">日別の競技タイトル</h3>
+    <p style="color:var(--muted);font-size:14.5px;margin:0 0 14px">開場・開演・終演の時刻は「<a href="#schedule">日程・スケジュール</a>」の章が正本です。</p>
     <div class="grid grid-2" style="margin-bottom:18px">
       <div class="card day-card">
         <p class="date">11.28 <small>SAT — DAY 1</small></p>
-        <ul class="time-list">
-          <li><span>開場（入れる時間）</span><b>12:30</b></li>
-          <li><span>開始</span><b>14:30</b></li>
-          <li><span>終了</span><b>21:00</b></li>
-        </ul>
-        <p style="margin-top:12px;margin-bottom:0">この日のゲーム：</p>
+        <p style="margin-bottom:0">この日のゲーム：</p>
         <ul class="guide-titles">
           <li><b>PUBG</b>（大人数で戦う射撃ゲーム）</li>
           <li><b>めっちゃカメレオン</b>（かくれんぼゲーム）</li>
@@ -1939,12 +1696,7 @@
       </div>
       <div class="card day-card d2">
         <p class="date">11.29 <small>SUN — DAY 2</small></p>
-        <ul class="time-list">
-          <li><span>開場（入れる時間）</span><b>11:00</b></li>
-          <li><span>開始</span><b>13:00</b></li>
-          <li><span>終了</span><b>19:30</b></li>
-        </ul>
-        <p style="margin-top:12px;margin-bottom:0">この日のゲーム：</p>
+        <p style="margin-bottom:0">この日のゲーム：</p>
         <ul class="guide-titles">
           <li><b>ハイパー枠</b>（当日に発表されるお楽しみ）</li>
           <li><b>ARC Raiders</b>（チームで協力する射撃ゲーム）</li>
@@ -1955,16 +1707,40 @@
     </div>
     <p style="color:var(--muted);font-size:14px;margin:0 0 18px">※ゲームの一覧は発表内容のまとめで、行われる順番は当日まで分かりません。</p>
 
+    <h3 style="margin:6px 0 12px;font-size:19px;font-weight:900">DAY2の形式と、スクリーンでの追い方</h3>
+    <div class="grid grid-2" style="margin-bottom:18px">
+      <div class="card">
+        <span class="tag">DAY 2 — 5人制トーナメント</span>
+        <h3>Overwatch</h3>
+        <p>1チーム5名×5チーム（4チーム＋REVENGERS）のトーナメントで、勝者はREVENGERSと追加ポイント戦。各チームに「OW担当5名」がいる。見切れ席ではエイムより、ウルト（必殺技）の合わせと集団戦の勝敗が追いやすい。</p>
+      </div>
+      <div class="card">
+        <span class="tag">DAY 2 — トリオ×2レイド</span>
+        <h3>ARC Raiders</h3>
+        <p>各チーム3名トリオで30分のレイドを2回。レイド間でメンバー変更可（最大6名まで使える）。勝敗は全アイテム売却後の所持金＋経験値の合計。脱出できたか・いくら稼いだかが画面表示で分かりやすく、初見でも追いやすい。</p>
+      </div>
+      <div class="card">
+        <span class="tag">DAY 2 — 投手はリーダー</span>
+        <h3>パワフルプロ野球2026-2027</h3>
+        <p>3イニング制トーナメント（決勝は5イニング）。投手は各チームのリーダーで確定。代打要請時は元プロの桧山進次郎／内川聖一／T-岡田／和田一浩や加藤純一が参戦し、解説は赤星憲広。リーダーの投球と元プロの代打が見せ場。</p>
+      </div>
+      <div class="card">
+        <span class="tag">DAY 2 — 当日発表</span>
+        <h3>ハイパー枠（シークレット）</h3>
+        <p>両日とも当日解禁のため、担当・練習とも情報なしが確定情報。k4senチームでは初顔合わせ切り抜きに「Hyper Leak by k4sen」の章があり、スプラトゥーン3を息抜きで回す様子も。あゆたろうはスプラ最高XP2400を実績に掲示。</p>
+      </div>
+    </div>
+
     <div class="grid grid-2" style="margin-bottom:18px">
       <div class="card">
         <span class="tag">現地に行く人へ</span>
         <h3>会場での見方</h3>
-        <p>チケットはスマートフォンの電子チケットです。同行者への受け渡し（分配）を事前に済ませて、開場時間に合わせて着くのが安心です。グッズ販売は会場の外（22ゲート前）で、DAY1は9:00〜17:30、DAY2は9:00〜16:00。入場した後には売り場がないので、買うなら入る前に。持ち物の確認は「<a href="#access">アクセス・持ち物</a>」の章へ。</p>
+        <p>チケットはスマートフォンの電子チケットです。同行者への受け渡し（分配）を事前に済ませて、開場時間に合わせて着くのが安心です。グッズ販売は会場の外（22ゲート前）で、入場後は売り場がないので買うなら入る前に（販売時刻は「<a href="#schedule">日程</a>」の章へ）。持ち物は「<a href="#access">アクセス・持ち物</a>」の章へ。</p>
       </div>
       <div class="card">
         <span class="tag">見切れ席の人へ</span>
         <h3>スマホの無料配信を一緒に使う</h3>
-        <p>見切れ席には専用のモニターが用意されます。それでも見えにくい場面は、スマホで無料配信（YouTube「mellow-fan」）を開いて、選手の画面を手元で補う見方がおすすめです。電池切れに備えてモバイルバッテリーを忘れずに。</p>
+        <p>見切れ席はステージやモニターが見えにくい席種で、専用モニターが用意されます。当日は「場内モニター＋手元の無料配信」の併用が前提で、見えにくい場面はスマホの無料配信（YouTube「mellow-fan」）で選手視点を補うのがおすすめ。練習で知った選手の声や連携のクセも頼りになります。</p>
       </div>
     </div>
 
@@ -2181,6 +1957,8 @@
   <section id="tickets">
     <div class="sec-head"><span class="no">09</span><h2>チケット・視聴方法</h2><span class="en">TICKETS &amp; STREAM</span></div>
     <div class="rule"></div>
+    <details class="basic-fold">
+      <summary>現地は全席スマホ電子チケット（追加発売中）／本編は無料配信＋有料PPV（OPENREC）（詳しく見る）</summary>
     <div class="grid grid-2" style="margin-bottom:18px">
       <div class="card">
         <span class="tag">AT VENUE</span>
@@ -2210,12 +1988,15 @@
       <li>転売は禁止で、不正転売チケットは無効。公式リセールは実施されない。購入後のキャンセル・払い戻しも不可。</li>
       <li>注釈席・見切れ席は座席位置によりモニターや演出が見えにくい場合がある。</li>
     </ul>
+    </details>
   </section>
 
   <!-- ACCESS -->
   <section id="access">
     <div class="sec-head"><span class="no">10</span><h2>アクセス・持ち物</h2><span class="en">ACCESS</span></div>
     <div class="rule"></div>
+    <details class="basic-fold">
+      <summary>会場は東京ドーム（水道橋・後楽園）／グッズは入場前に22ゲート前で（詳しく見る）</summary>
     <div class="grid grid-2" style="margin-bottom:18px">
       <div class="card">
         <span class="tag">VENUE</span>
@@ -2240,57 +2021,34 @@
       <li><b>現金少し＋キャッシュレス</b>コインロッカーは現金のみ、フードはキャッシュレスのみ</li>
       <li><b>撮影ルール確認</b>場内の撮影・録画は原則禁止（一部、撮影可能な時間が設けられる予定）</li>
     </ul>
+    </details>
   </section>
 
   <!-- FAQ -->
   <section id="faq">
-    <div class="sec-head"><span class="no">11</span><h2>よくある疑問</h2><span class="en">FAQ</span></div>
+    <div class="sec-head"><span class="no">11</span><h2>公式リンク集</h2><span class="en">OFFICIAL LINKS</span></div>
     <div class="rule"></div>
-    <details class="faq">
-      <summary>「FINAL」って、もう次はないの？</summary>
-      <div class="a"><p>大会名の通り、今回はシリーズ最終回と位置づけられている。キャッチコピーも「原点回帰、最終決戦。」で、リーダーも第1回と同じ4人に戻った。前回（2024年3月）から約2年半ぶりの開催になる。</p></div>
-    </details>
-    <details class="faq">
-      <summary>なぜ「加藤純一 Presents」が外れたの？</summary>
-      <div class="a"><p>第1回・第2回は「加藤純一 Presents 配信者ハイパーゲーム大会」だったが、FINALでは正式名称から外れ「配信者ハイパーゲーム大会 FINAL」となった。加藤純一は企画・発案者として関わり続け、本番ではMr.HYGとして実況側に回る。</p></div>
-    </details>
-    <details class="faq">
-      <summary>HYG REVENGERSは何をするチーム？</summary>
-      <div class="a"><p>ドラフトで組まれる4チームとは別の「第5勢力」として発表された10名（ありけん、キズナアイ、Killin9Hit、こーすけ、ta1yo、蛇足、まざー３、Masuo、YamatoN、ラクシャーナ）。具体的な役割や対戦形式の詳細は公式からまだ明かされておらず、本番でどう優勝争いに絡むかが見どころだ。</p></div>
-    </details>
-    <details class="faq">
-      <summary>チケットがなくても見られる？</summary>
-      <div class="a"><p>本編は無料配信されるので、自宅からでも全競技を追える（無料配信はYouTube「mellow-fan」とTwitch「加藤純一」の2か所）。より深く楽しみたい場合は、マルチアングルや舞台裏ドキュメンタリー「ROAD TO HYPER」が付く有料PPV（OPENREC）もある。配信プラットフォームやURLは公式サイト・公式Xで案内される。</p></div>
-    </details>
-    <details class="faq">
-      <summary>シークレットタイトルはいつ分かる？</summary>
-      <div class="a"><p>各日1枠ずつ、当日の現地で解禁される。過去大会でも当日発表枠が恒例で、第1回は最終競技VALORANTの大ポイントが優勝争いを決めた。最後まで順位が読めないのがハイゲの醍醐味だ。</p></div>
-    </details>
+    <p class="sec-lead">開催・チケット・当日の案内は、公式の情報が正本です。</p>
+    <div class="official-links">
+      <a href="https://lp.openrec.jp/hyper-game-event-final" target="_blank" rel="noopener">公式サイト（OPENREC）</a>
+      <a href="https://www.tokyo-dome.co.jp/dome/" target="_blank" rel="noopener">東京ドーム公式サイト</a>
+      <a href="https://followboard.jp/events/hyper-game-event-final" target="_blank" rel="noopener">FollowBoard（非公式ファン集計）</a>
+    </div>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <h3>公式リンク</h3>
-    <div class="official-links">
-      <a href="https://lp.openrec.jp/hyper-game-event-final" target="_blank" rel="noopener">公式サイト（OPENREC）</a>
-      <a href="https://www.tokyo-dome.co.jp/dome/" target="_blank" rel="noopener">東京ドーム</a>
-    </div>
     <h3>情報の出典（2026年11月22日確認）</h3>
     <ul>
-      <li>配信者ハイパーゲーム大会 FINAL 公式サイト（OPENREC）— 開催概要・チケット料金・販売スケジュール・グッズ・注意事項</li>
-      <li>電ファミニコゲーマー（2026年11月19日）— ドラフト会議での競技タイトル発表、主題歌「HYPER!!」初披露</li>
-      <li>esports4（2026年11月17日）— ドラフト方式、過去大会の結果・タイトル一覧</li>
-      <li>FollowBoard — ドラフト後のチーム編成（59名掲載）</li>
-      <li>マイナビニュース（2026年11月6日）— サイコムの大会用PC提供</li>
-      <li>V/WIRE（2026年11月11日）／ASCII・Real Sound（第2回レポート）— 動員数・最大同時接続数・最終順位</li>
-      <li>FollowBoard（非公式ファン集計）— 練習アーカイブ112本の内訳・各メンバーの練習配信タイトル／日時（2026年11月22日午前確認）。「練習情報」章の担当候補・練習状況の主出典</li>
-      <li>FollowBoard（非公式ファン集計）— ライブ配信状況（2026年11月22日10:38頃確認）</li>
-      <li>バズチェック ゲーム部門24時間ランキング — 切り抜き動画の再生数（2026年11月22日10:36頃確認）</li>
-      <li>Newikis／Weblio「配信者ハイパーゲーム大会」、GameWith ドラフト会議記事 — 各タイトルの出場人数・ルール（パワプロ投手＝リーダー、代打の元プロ4名など）</li>
-      <li>YouTube切り抜き・X投稿まとめ記事（livedoorブログ、coki、レリヅモ等）— もこうチームOW緊急会議の役割発言、Laz・えなこのX投稿引用、関チームOW練習切り抜き、k4senチーム初顔合わせ切り抜き</li>
-      <li>各配信者のTwitchチャンネルURL — ページ内の出典リンクから読み取れるもの（Laz／赤見かるび）と、配信統計サイト等で本人のチャンネルと確認できたもの（バトラ／ふらんしすこ／こく兄）のみ掲載（2026年11月22日確認）</li>
+      <li>公式サイト（OPENREC）— 開催概要・チケット料金・グッズ・注意事項</li>
+      <li>電ファミニコゲーマー／esports4／マイナビニュース — ドラフト会議の発表、大会用PC提供ほか</li>
+      <li>FollowBoard（非公式ファン集計）— チーム編成、練習アーカイブ112本の内訳、ライブ配信状況</li>
+      <li>バズチェック ゲーム部門24時間ランキング — 切り抜き動画の再生数</li>
+      <li>Newikis／Weblio／GameWith — 各タイトルの出場人数・ルール（パワプロ投手＝リーダー等）</li>
+      <li>YouTube切り抜き・X投稿まとめ記事（livedoorブログ、coki等）— OW緊急会議の役割発言ほか</li>
+      <li>各配信者のTwitchチャンネル — 出典リンク等で本人のものと確認できたもののみ掲載</li>
       <li>東京ドーム夜景の写真：sokobata.blog 掲載写真を使用</li>
     </ul>
     <p>本ページは非公式のファン向けまとめです。開催内容・出演者・タイトルは予告なく変更される場合があります。チケット購入や来場前には必ず公式サイトの最新情報を確認してください。</p>
@@ -2344,14 +2102,11 @@
   }
   function applyFilter(){
     var q=searchEl?searchEl.value.trim():'';
-    document.querySelectorAll('.practice-team[data-team],.ms-team[data-team]').forEach(function(el){
-      el.style.display=(curTeam==='all'||el.getAttribute('data-team')===curTeam)?'':'none';
-    });
-    var msVisible=0;
-    document.querySelectorAll('.ms-list li').forEach(function(li){
-      var ok=!q||li.textContent.indexOf(q)!==-1;
-      li.style.display=ok?'':'none';
-      if(ok){msVisible++;}
+    var teamVisible=0;
+    document.querySelectorAll('.practice-team[data-team]').forEach(function(el){
+      var show=(curTeam==='all'||el.getAttribute('data-team')===curTeam);
+      el.style.display=show?'':'none';
+      if(show){teamVisible++;}
     });
     var buzzVisible=0;
     document.querySelectorAll('.buzz-card,.live-card').forEach(function(card){
@@ -2364,7 +2119,7 @@
       if(curTeam==='all'&&!q){
         statusEl.textContent='いまは絞り込んでいません。全部表示されています。';
       }else{
-        statusEl.textContent='絞り込み中：チーム＝'+teamLabels[curTeam]+(q?'／名前＝「'+q+'」':'')+'。練習リスト '+msVisible+'件、配信・バズのカード '+buzzVisible+'件が表示中です。';
+        statusEl.textContent='絞り込み中：チーム＝'+teamLabels[curTeam]+(q?'／名前＝「'+q+'」':'')+'。練習情報 '+teamVisible+'チーム、配信・バズのカード '+buzzVisible+'件が表示中です。';
       }
     }
   }
