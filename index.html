@@ -1676,16 +1676,17 @@
     <ul class="timeline">
       <li>
         <div class="d"><span class="cond">STEP 1</span>ハイゲとは</div>
-        <p>加藤純一が主催する、人気配信者50人超が4チームに分かれてゲームで戦う大会。今回がFINAL（最終回）。</p>
+        <p>人気配信者50人以上が、4つのチームに分かれてゲームで戦う大会です。配信者とは、ゲームの様子などをインターネットで生放送する人のこと。主催は人気配信者の加藤純一で、今回が最後の大会（FINAL）です。</p>
       </li>
       <li>
         <div class="d"><span class="cond">STEP 2</span>これまで</div>
-        <p>第1回（2023）はSHAKAチーム優勝、第2回（2024）はもこうチーム優勝。</p>
+        <p>これまで2回開かれています。第1回（2023年）は、リーダーの一人SHAKAのチームが優勝。第2回（2024年）は、同じくリーダーの一人もこうのチームが優勝しました。</p>
       </li>
       <li>
         <div class="d"><span class="cond">STEP 3</span>ドラフト会議</div>
         <div>
-          <p><b>2026年11月19日</b>　リーダー4人（k4sen、SHAKA、もこう、関優太）が順番に選手を指名してチームが決まった。</p>
+          <p><b>2026年11月19日</b>、「ドラフト会議」がありました。ドラフトとは、リーダーが順番に欲しい選手を指名して、自分のチームを作る仕組みのことです。</p>
+          <p>リーダーはk4sen、SHAKA、もこう、関優太の4人です。名前が呼ばれた瞬間の、選手の喜びや驚きの表情が大きな話題になりました。下の動画は、その名場面を短く切り取った「切り抜き」です。</p>
           <div class="story-clips">
 <div class="buzz-card">
         <span class="yt-facade" data-yt="iWpysPgxGLk" role="button" tabindex="0" aria-label="動画を再生：【ハイパードラフト会議】配信者ハイパーゲーム大会 FINAL（公式配信）">
@@ -1722,11 +1723,15 @@
       </li>
       <li>
         <div class="d"><span class="cond">STEP 4</span>練習期間</div>
-        <p><b>11月19日〜</b>　本番の競技（PUBG、ARC Raiders、オーバーウォッチ、パワプロなど）の練習配信が毎晩行われている。このページでは配信状況と切り抜きを追っている。</p>
+        <div>
+          <p><b>11月19日〜</b>　本番までの練習期間です。本番で戦うゲームは、撃ち合いのPUBGやARC Raiders、オーバーウォッチ、野球のパワプロなどです。</p>
+          <p>選手たちは毎晩、その練習の様子をインターネットで生配信しています。</p>
+          <p>このページでは、誰が今配信しているかと、名場面の切り抜きを追いかけています。</p>
+        </div>
       </li>
       <li>
         <div class="d"><span class="cond">STEP 5</span>本番</div>
-        <p><b>2026年11月28日・29日</b>　東京ドームで2日間開催。</p>
+        <p><b>2026年11月28日・29日</b>　東京ドームで2日間開かれます。4チームが練習の成果をぶつけ合う、大会の本番です。</p>
       </li>
     </ul>
   </section>
@@ -2536,6 +2541,8 @@
 #teamview .tv-chat{flex:0 1 320px;min-width:260px}
 #teamview .tv-chat iframe{display:block;width:100%;height:100%;min-height:320px;border:0}
 #teamview .tv-subs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+#teamview .tv-sum{font-size:13.5px;font-weight:800;color:#dbe7ff;background:rgba(56,225,255,.08);border:1px solid rgba(56,225,255,.25);border-radius:10px;padding:7px 12px;margin:10px 0 4px}
+#teamview .tv-ghead{grid-column:1/-1;font-size:13px;font-weight:900;color:#9fd8ff;margin-top:8px}
 #teamview .tv-sub{background:#0d1f3c;border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:hidden;cursor:pointer;color:#eaf4ff;text-align:left;padding:0}
 #teamview .tv-sub img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 #teamview .tv-sub .tv-subname{display:block;padding:7px 9px;font-size:13px}
@@ -2567,14 +2574,17 @@ var teamEl=c.querySelector(".lc-team");
 var whatEl=c.querySelector(".lc-what");
 var bEl=whatEl?whatEl.querySelector("b"):null;
 var imgEl=c.querySelector(".lc-thumb img");
-members.push({login:m[1],name:nameEl?nameEl.textContent.trim():m[1],team:teamEl?teamEl.textContent.trim():"その他",game:bEl?bEl.textContent.trim():"",thumb:imgEl?imgEl.getAttribute("src"):"",v:parseV(c)});
+var mates=[];
+var cm=(c.textContent||"").match(/共演\s*([^\s、。・]+(?:・[^\s、。・]+)*)/);
+if(cm)mates=cm[1].split("・").map(function(s){return s.trim()}).filter(Boolean);
+members.push({login:m[1],name:nameEl?nameEl.textContent.trim():m[1],team:teamEl?teamEl.textContent.trim():"その他",game:bEl?bEl.textContent.trim():"",thumb:imgEl?imgEl.getAttribute("src"):"",v:parseV(c),mates:mates});
 });
 if(!members.length)return;
 var teams=[];
 members.forEach(function(x){if(teams.indexOf(x.team)===-1)teams.push(x.team)});
 var sec=document.createElement("section");
 sec.id="teamview";
-sec.innerHTML='<h2>チーム別マルチビュー</h2><p class="tv-sub">チームを選ぶと、配信中のメンバーを大きく1画面で見られます。下の小さい画面をタップするとメインと入れ替わります。グリッド表示では名前のバーをドラッグ（または2つタップ）で並び替えできます。</p><div class="tv-chips"></div><div class="tv-modes"></div><div class="tv-body"></div><p class="tv-note">プレイヤーは音声なしで再生されます。音を出したい画面はタップして操作してください。</p>';
+sec.innerHTML='<h2>チーム別マルチビュー</h2><p class="tv-sub">チームを選ぶと、配信中のメンバーを大きく1画面で見られます。下の小さい画面をタップするとメインと入れ替わります。グリッド表示では名前のバーをドラッグ（または2つタップ）で並び替えできます。</p><div class="tv-chips"></div><div class="tv-modes"></div><div class="tv-sum"></div><div class="tv-body"></div><p class="tv-note">プレイヤーは音声なしで再生されます。音を出したい画面はタップして操作してください。</p>';
 var anchor=document.getElementById("now");
 if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else document.body.appendChild(sec);
 var toc=document.querySelector(".toc-in");
@@ -2589,6 +2599,11 @@ var focusLogin=null;
 var chatOn=false;
 var orders={};
 var selIdx=-1;
+function gameGroups(list){
+var groups={};
+list.forEach(function(x){var g=x.game||"その他";(groups[g]=groups[g]||[]).push(x)});
+return Object.keys(groups).map(function(g){return {game:g,members:groups[g]}}).sort(function(a,b){return b.members.length-a.members.length});
+}
 function teamMembers(t){
 if(!orders[t]){
 var list=members.filter(function(x){return x.team===t});
@@ -2636,8 +2651,14 @@ b.addEventListener("click",function(){mode=md[0];selIdx=-1;render()});
 modesEl.appendChild(b);
 });
 bodyEl.innerHTML="";
+var sumEl=sec.querySelector(".tv-sum");
 var list=customList?customMembers():teamMembers(current);
-if(!list.length){var p=document.createElement("p");p.className="tv-none";p.textContent="このチームは現在配信中ではありません。";bodyEl.appendChild(p);return}
+if(!list.length){sumEl.textContent="";var p=document.createElement("p");p.className="tv-none";p.textContent="このチームは現在配信中ではありません。";bodyEl.appendChild(p);return}
+sumEl.textContent="いまの内訳："+gameGroups(list).map(function(g){
+var mem=g.members;
+var together=mem.length>1&&mem.some(function(x){return (x.mates||[]).some(function(mn){return mem.some(function(y){return y!==x&&(y.name===mn||y.name.indexOf(mn)>-1||mn.indexOf(y.name)>-1)})})});
+return g.game+" "+mem.length+"人"+(together?"（一緒にプレイ中）":"");
+}).join("／");
 if(mode==="focus")renderFocus(list);else renderGrid(list);
 }
 function renderFocus(list){
@@ -2673,7 +2694,12 @@ var subs=list.filter(function(x){return x.login!==focusLogin});
 if(subs.length){
 var sg=document.createElement("div");
 sg.className="tv-subs";
-subs.forEach(function(x){
+gameGroups(subs).forEach(function(g){
+var hd=document.createElement("div");
+hd.className="tv-ghead";
+hd.textContent=g.game+"（"+g.members.length+"人）";
+sg.appendChild(hd);
+g.members.forEach(function(x){
 var b=document.createElement("button");
 b.className="tv-sub";
 if(x.thumb){var im=document.createElement("img");im.src=x.thumb;im.alt="";b.appendChild(im)}
@@ -2684,6 +2710,7 @@ if(x.game){var g=document.createElement("span");g.className="tv-game";g.textCont
 b.appendChild(s);
 b.addEventListener("click",function(){focusLogin=x.login;render()});
 sg.appendChild(b);
+});
 });
 bodyEl.appendChild(sg);
 }
