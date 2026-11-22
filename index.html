@@ -658,6 +658,7 @@ el.addEventListener("click",close);
 <nav class="toc" aria-label="ページ内メニュー">
   <div class="toc-in wrap" style="padding-left:12px;padding-right:12px">
     <a href="#now">いまのハイゲ</a>
+    <a href="#upcoming">もうすぐ始まる</a>
     <a href="#today-new">今日の新着</a>
     <a href="#digest">日ごとのまとめ</a>
     <a href="#oshi">推しフィルター・推し決め</a>
@@ -798,6 +799,17 @@ el.addEventListener("click",close);
     <p class="now-note">※「配信中」は最終確認時点のスナップショットで、開いた瞬間のリアルタイム表示ではありません。いま配信しているかどうかは、タップ先のチャンネルで分かります。練習の詳しい様子は「<a href="#practice">練習情報</a>」の章へ。</p>
   </div>
 
+  <!-- UPCOMING -->
+  <div class="now" id="upcoming" style="margin-top:22px">
+    <div class="now-head">
+      <h2>もうすぐ始まる（配信予定）</h2>
+    </div>
+    <p class="lead">YouTubeの待機所（配信予定）や、配信者の予告ポストで開始時刻が確認できた練習配信を、始まる順に並べる欄です。</p>
+    <!-- 定期チェック更新で、この下に配信予定のカードを追加する -->
+    <div id="upcoming-list"></div>
+    <p class="now-note">確認できた配信予定はまだありません。配信予告やYouTubeの待機所が見つかり次第、ここに表示されます。</p>
+  </div>
+
   <!-- TODAY NEW (P5) -->
   <div class="today-new" id="today-new">
     <div class="now-head">
@@ -832,6 +844,7 @@ el.addEventListener("click",close);
       <span class="upd">2026年11月22日 14:47頃確認</span>
     </div>
     <p class="lead">いま伸びているハイゲ関連の切り抜き動画とXポスト。YouTubeの切り抜き、Xポストに加えて、<b style="color:var(--ink)">Twitchクリップ</b>（生配信の名場面を短く切り取った動画）も並べました。再生数などの数字は、確認できたものだけを出典つきで載せています。数字が取れなかったポストも「反応数は未確認」と書いて載せています（数字を作ることはしません）。切り抜きには、元の配信と前後の流れも付けました。</p>
+    <p class="now-note" style="margin:2px 0 0">※日付は朝5時から翌朝5時までを「1日」として区切っています。深夜〜早朝に始まった配信の切り抜きは前日分に入ります。</p>
     <h3 style="margin:16px 0 10px;font-size:18px;font-weight:900">YouTubeで伸びた切り抜き動画 — いま伸びている3本</h3>
     <div class="buzz-list">
       <a class="buzz-card" href="https://www.youtube.com/watch?v=beAEvZnRZZs" target="_blank" rel="noopener">
@@ -1220,6 +1233,7 @@ el.addEventListener("click",close);
     <div class="sec-head"><h2>日ごとのまとめ</h2><span class="en">DAILY DIGEST</span></div>
     <div class="rule"></div>
     <p class="sec-lead">1日追えなかった日があっても大丈夫なように、その日に起きたことを日ごとに短くまとめました。内容はこのページで確認できた出来事だけです（2026年11月22日午前時点）。</p>
+    <p class="now-note" style="margin:-12px 0 20px">※このページの「1日」は朝5時から翌朝5時までで区切っています。深夜〜早朝に始まった配信は前日分に入ります。</p>
 
     <div class="digest-day">
       <h3>11月22日（日）— 今日・午前時点</h3>
