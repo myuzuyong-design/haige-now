@@ -336,10 +336,16 @@
   .live-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
   @media (max-width:760px){.live-grid{grid-template-columns:1fr}}
   .live-card{
-    display:block;text-decoration:none;color:var(--ink);
-    border:1.5px solid #e5484d;border-radius:12px;padding:13px 15px;background:var(--surface);
+    display:flex;flex-direction:column;text-decoration:none;color:var(--ink);
+    border:1.5px solid #e5484d;border-radius:12px;padding:0;background:var(--surface);overflow:hidden;
   }
   .live-card:hover,.live-card:focus-visible{background:var(--surface-2)}
+  .live-card .lc-thumb{
+    display:block;flex:0 0 auto;aspect-ratio:440/248;background:var(--surface-2);
+    overflow:hidden;border-bottom:1px solid var(--line);
+  }
+  .live-card .lc-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .live-card .lc-body{display:block;padding:13px 15px 15px}
   .live-card .lc-top{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
   .live-card .lc-name{font-weight:900;font-size:16.5px}
   .live-card .lc-team{font-size:13px;font-weight:700;color:var(--muted)}
@@ -588,29 +594,33 @@
   <div class="now" id="now">
     <div class="now-head">
       <h2>いまのハイゲ</h2>
-      <span class="upd">最終確認：2026年11月22日 11:13頃（JST）</span>
+      <span class="upd">最終確認：2026年11月22日 11:40頃（JST）</span>
     </div>
-    <p class="lead">本番まであと少し、ドラフト後の練習期間まっただ中。最終確認の時点では、下の4名がライブ配信中だった。カードをタップすると、そのまま本人のTwitchが開く。</p>
+    <p class="lead">本番まであと少し、ドラフト後の練習期間まっただ中。最終確認の時点では、下の3名がライブ配信中だった。カードをタップすると、そのまま本人のTwitchが開く。</p>
     <div class="live-grid">
       <a class="live-card" href="https://www.twitch.tv/batora324" target="_blank" rel="noopener">
+        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_batora324-440x248.jpg" alt="バトラのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
+        <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">バトラ</span><span class="lc-team">TEAM もこう</span></span>
-        <span class="lc-what"><b>Splatoon 3</b>「日課のパワプロ練習→息抜きスプラXマッチ」を配信中だった。パワプロの日課練習からスプラトゥーン3のXマッチへ移った同じ配信枠（11:13時点、約8,767人が視聴）</span>
+        <span class="lc-what"><b>Splatoon 3</b>「日課のパワプロ練習→息抜きスプラXマッチ」を配信中だった。パワプロの日課練習からスプラトゥーン3のXマッチへ移った同じ配信枠（11:40時点、約7,520人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
+        </span>
       </a>
       <a class="live-card" href="https://www.twitch.tv/dmf_kyochan" target="_blank" rel="noopener">
+        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_dmf_kyochan-440x248.jpg" alt="恭一郎のTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
+        <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">恭一郎</span><span class="lc-team">TEAM SHAKA</span></span>
-        <span class="lc-what"><b>ARC Raiders</b>「ぱぶじー → ARC」を配信中だった。PUBGからARC Raidersの練習へ切り替えた枠で、SHAKAチームで初めて確認できたARC Raidersの練習（11:13時点、約3,103人が視聴）</span>
+        <span class="lc-what"><b>ARC Raiders</b>「ぱぶじー → ARC」を配信中だった。PUBGからARC Raidersの練習へ切り替えた枠で、SHAKAチームで初めて確認できたARC Raidersの練習（11:40時点、約2,518人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
-      </a>
-      <a class="live-card" href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener">
-        <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">こく兄</span><span class="lc-team">TEAM 関優太</span></span>
-        <span class="lc-what"><b>ROB RUN</b>「11/22 【ROBRUN】デイリー←練習←スプラ３←WWE」を配信中だった（11:13時点、約3,066人が視聴）</span>
-        <span class="lc-go">Twitchで観る →</span>
+        </span>
       </a>
       <a class="live-card" href="https://www.twitch.tv/gocchanmikey" target="_blank" rel="noopener">
+        <span class="lc-thumb"><img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_gocchanmikey-440x248.jpg" alt="ごっちゃん@マイキーのTwitch配信のライブプレビュー" width="440" height="248" loading="lazy" onerror="this.style.display='none'" /></span>
+        <span class="lc-body">
         <span class="lc-top"><span class="live-pill"><span class="dot"></span>配信中 LIVE</span><span class="lc-name">ごっちゃん@マイキー</span><span class="lc-team">TEAM SHAKA</span></span>
-        <span class="lc-what"><b>ARC Raiders</b>「ハイゲ練習 ARC練習」を配信中だった（11:13時点、約1,612人が視聴）</span>
+        <span class="lc-what"><b>ARC Raiders</b>「ハイゲ練習 ARC練習」を配信中だった（11:40時点、約1,579人が視聴）</span>
         <span class="lc-go">Twitchで観る →</span>
+        </span>
       </a>
     </div>
     <ul class="now-stats">
@@ -625,10 +635,11 @@
   <div class="today-new" id="today-new">
     <div class="now-head">
       <h2>今日の新着だけ</h2>
-      <span class="upd">最終確認：2026年11月22日 11:13頃（JST）</span>
+      <span class="upd">最終確認：2026年11月22日 11:40頃（JST）</span>
     </div>
-    <p class="lead" style="margin:0;color:var(--muted);font-size:15.5px">今日（11月22日）に初めて確認できたものだけを集めました。このページは自動では変わりません。あくまで<b style="color:var(--ink)">最終確認時点のまとめ</b>で、今この瞬間のリアルタイム表示ではありません。</p>
+    <p class="lead" style="margin:0;color:var(--muted);font-size:15.5px">今日（11月22日）に初めて確認できたものだけを集めました。このページは30分ごとに自動で更新されます。ただし、表示は<b style="color:var(--ink)">最終確認時点のまとめ</b>で、今この瞬間のリアルタイム表示ではありません。</p>
     <ul>
+      <li><span class="new-chip">11/22 新着</span><b>こく兄の配信が終了し、ライブ配信中は3名になった</b>（11:40時点：バトラ、恭一郎、ごっちゃん@マイキー）。こく兄の最新配信はWWE 2K26「11/22【WWE2K26】こくは譲らん！求めよ！」でした。カードは「<a href="#now">いまのハイゲ</a>」にあります。</li>
       <li><span class="new-chip">11/22 新着</span><b>ふらんしすこのPUBG配信が終了し、ライブ配信中は4名になった</b>（11:13時点：バトラ、恭一郎、こく兄、ごっちゃん@マイキー）。カードは「<a href="#now">いまのハイゲ</a>」にあります。</li>
       <li><span class="new-chip">11/22 新着</span><b>朝の時点で5名がライブ配信中</b>（バトラ、恭一郎、こく兄、ごっちゃん@マイキー、ふらんしすこ）。カードは「<a href="#now">いまのハイゲ</a>」にあります。</li>
       <li><span class="new-chip">11/22 新着</span><b>恭一郎のARC Raiders練習</b>を確認。SHAKAチームで初めて確認できたARC Raidersの練習です。</li>
@@ -954,10 +965,11 @@
         </div>
 
         <div class="person-card">
-          <div class="pc-head"><span class="pc-name">こく兄</span><span class="pc-team">TEAM 関優太</span><span class="live-pill"><span class="dot"></span>配信中 LIVE</span></div>
+          <div class="pc-head"><span class="pc-name">こく兄</span><span class="pc-team">TEAM 関優太</span></div>
           <p><span class="pc-label">今日の配信</span><b>午前10:36頃に配信中</b>でした（見ていた人は約3,044人）。やっていたのは <b>ROB RUN</b> です。配信の名前「11/22【ROBRUN】デイリー←練習←スプラ３←WWE」の通り、その前は練習、Splatoon 3、WWE 2K26と、大会の種目を順番に練習してきた流れでした。</p>
+          <p><span class="pc-label">いまの状態</span><b>11:40頃の確認時点では、配信は終了していました</b>（配信中ではありません）。最新の配信は <b>WWE 2K26</b>「11/22【WWE2K26】こくは譲らん！求めよ！」です。</p>
           <p><span class="pc-label">切り抜き・バズ</span>今日（11月22日）の分の新しい切り抜きは<span class="pc-unknown">確認できていない</span>。ドラフトの日（11月19日）の<b>Twitchクリップ</b>「<a href="https://clips.twitch.tv/EnthusiasticEntertainingMelonPipeHype-a0t2Z2aEJ8nrvduo" target="_blank" rel="noopener">謹慎してろ！</a>」は、集計サイトStreamerRadarで<b>10,447回</b>再生（2026年11月22日確認）と大きく伸びています。ドラフト会議を同時視聴していた配信の場面で、上の「<a href="#buzz">バズってるポスト・切り抜き</a>」のTwitchクリップ欄にも載せました。元の配信の該当位置は特定できていません。</p>
-          <a class="pc-go" href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener">こく兄のTwitchを開く →</a>
+          <a class="pc-go plain" href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener">こく兄のTwitchを開く（録画はこちら）→</a>
         </div>
 
         <div class="person-card">
@@ -1662,11 +1674,11 @@
           <span class="ev"><span class="d">11/19</span><b>めっちゃカメレオン</b> 参加型 3時間48分／クリップ「釈迦に選ばれて大興奮」</span>
           <span class="ev"><a href="https://www.twitch.tv/akamikarubi" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
         <li class="live"><a class="card-link" href="https://www.twitch.tv/dmf_kyochan" target="_blank" rel="noopener"><span class="who">恭一郎 <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ぱぶじー → ARC」（PUBGからARCへ移行、10:36時点 約3,197人視聴）</span>
+          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ぱぶじー → ARC」（PUBGからARCへ移行、11:40時点 約2,518人視聴）</span>
           <span class="ev"><span class="d">11/20–21</span><b>PUBG</b>「ぱぶじー」「隙間時間にぱぶじー」を連日複数枠</span>
           <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
         <li class="live"><a class="card-link" href="https://www.twitch.tv/gocchanmikey" target="_blank" rel="noopener"><span class="who">ごっちゃん@マイキー <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ハイゲ練習 ARC練習」（10:36時点 約1,692人視聴）</span>
+          <span class="ev"><span class="d">11/22</span><b>ARC Raiders</b>「ハイゲ練習 ARC練習」（11:40時点 約1,579人視聴）</span>
           <span class="ev"><span class="d">11/20</span><b>Overwatch</b>「ハイゲ練習」／深夜は<b>めっちゃカメレオン</b></span>
           <span class="ev"><span class="d">11/19</span><b>PUBG</b>「ストグラSeason2→PUBG練習」</span>
           <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
@@ -1695,7 +1707,7 @@
           <span class="ev"><span class="d">11/19</span><b>Overwatch</b>含む 11時間37分枠（<a href="https://streamers.ludens.com.tw/en/channel/lazvell" target="_blank" rel="noopener">Twitch統計</a>）</span>
           <span class="ev"><a href="https://www.twitch.tv/lazvell" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
         <li class="live"><a class="card-link" href="https://www.twitch.tv/batora324" target="_blank" rel="noopener"><span class="who">バトラ <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22朝</span><b>Splatoon 3</b>「日課のパワプロ練習→息抜きスプラXマッチ」をライブ配信中だった（パワプロの日課練習からスプラへ移行、10:38時点 約8,415人視聴）</span>
+          <span class="ev"><span class="d">11/22朝</span><b>Splatoon 3</b>「日課のパワプロ練習→息抜きスプラXマッチ」をライブ配信中だった（パワプロの日課練習からスプラへ移行、11:40時点 約7,520人視聴）</span>
           <span class="ev"><span class="d">11/19</span><b>Overwatch</b>「オーバーウォッチやてみる」（集計で578分枠）</span>
           <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
         <li><span class="who">けんき</span>
@@ -1726,9 +1738,10 @@
     <div class="ms-team" data-team="seki" style="--c:var(--team-seki)">
       <h3><span class="dot"></span>TEAM 関優太</h3>
       <ul class="ms-list">
-        <li class="live"><a class="card-link" href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener"><span class="who">こく兄 <span class="live-pill"><span class="dot"></span>配信中 LIVE</span></span>
-          <span class="ev"><span class="d">11/22</span><b>ROB RUN</b>「11/22【ROBRUN】デイリー←練習←スプラ３←WWE」をライブ配信中だった（10:36時点 約3,044人視聴）</span>
-          <span class="tap-hint">タップでTwitchの配信ページへ →</span></a></li>
+        <li><span class="who">こく兄</span>
+          <span class="ev"><span class="d">11/22</span><b>WWE 2K26</b>「11/22【WWE2K26】こくは譲らん！求めよ！」が最新配信（11:40時点では配信終了）</span>
+          <span class="ev"><span class="d">11/22</span><b>ROB RUN</b>「11/22【ROBRUN】デイリー←練習←スプラ３←WWE」を配信していた（10:36時点 約3,044人視聴）</span>
+          <span class="ev"><a href="https://www.twitch.tv/kokujintv" target="_blank" rel="noopener">Twitchチャンネル →</a></span></li>
         <li><span class="who">渋谷ハル</span>
           <span class="ev"><span class="d">11/21</span><b>Overwatch</b>「関チーム オーバーウォッチ練習 w/ 関優太 SUMOMO Euriece あっさりしょこ」（YouTube、約4時間29分・約7.7万回表示）</span>
           <span class="ev"><span class="d">11/21</span>切り抜き「ラインハルトにぶっ刺さるメイの可能性に気付いた関チーム一同」（<a href="https://www.youtube.com/watch?v=qGYkmSJk5Do" target="_blank" rel="noopener">YouTube</a>、約5.8万回表示）</span>
