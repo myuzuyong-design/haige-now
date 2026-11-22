@@ -2520,12 +2520,33 @@ el.addEventListener("click",close);
 #teamview{margin:18px 0 6px;padding:16px;border-radius:18px;background:linear-gradient(180deg,rgba(255,43,214,.08),rgba(0,229,255,.06)),#0a1730;border:1px solid rgba(255,255,255,.14);color:#eaf4ff;font-family:"Optimistic AI VF",system-ui,sans-serif}
 #teamview h2{font-size:19px;margin:0 0 4px}
 #teamview .tv-sub{font-size:13px;color:#9fd8ff;margin:0 0 12px}
-#teamview .tv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+#teamview .tv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 #teamview .tv-chip{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#eaf4ff;font-size:14px;cursor:pointer}
 #teamview .tv-chip.tv-on{background:linear-gradient(90deg,#ff2bd6,#00e5ff);color:#02122f;font-weight:800;border-color:transparent}
-#teamview .tv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+#teamview .tv-modes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+#teamview .tv-mode{padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#cfe6ff;font-size:13px;cursor:pointer}
+#teamview .tv-mode.tv-on{background:#eaf4ff;color:#02122f;font-weight:800;border-color:transparent}
+#teamview .tv-stage{background:#000;border-radius:12px;overflow:hidden}
+#teamview .tv-bar{padding:9px 12px;font-size:15px;background:#0d1f3c;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+#teamview .tv-bar .tv-game{font-size:12px;font-weight:800;color:#02122f;background:#00e5ff;border-radius:999px;padding:2px 9px}
+#teamview .tv-chatbtn{font-size:12.5px;padding:5px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#eaf4ff;cursor:pointer}
+#teamview .tv-chatbtn.tv-on{background:#ff2bd6;border-color:transparent;color:#fff;font-weight:800}
+#teamview .tv-stagewrap{display:flex;flex-wrap:wrap}
+#teamview .tv-player{flex:1 1 420px;min-width:280px}
+#teamview .tv-player iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+#teamview .tv-chat{flex:0 1 320px;min-width:260px}
+#teamview .tv-chat iframe{display:block;width:100%;height:100%;min-height:320px;border:0}
+#teamview .tv-subs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+#teamview .tv-sub{background:#0d1f3c;border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:hidden;cursor:pointer;color:#eaf4ff;text-align:left;padding:0}
+#teamview .tv-sub img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+#teamview .tv-sub .tv-subname{display:block;padding:7px 9px;font-size:13px}
+#teamview .tv-sub .tv-game{font-size:11px;font-weight:800;color:#02122f;background:#00e5ff;border-radius:999px;padding:1px 7px;margin-left:6px}
+#teamview .tv-grid{display:grid;gap:12px}
+#teamview .tv-grid.g-std{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+#teamview .tv-grid.g-big{grid-template-columns:repeat(auto-fit,minmax(480px,1fr))}
 #teamview .tv-cell{background:#000;border-radius:12px;overflow:hidden}
-#teamview .tv-cell .tv-name{padding:8px 10px;font-size:14px;background:#0d1f3c;display:flex;justify-content:space-between;gap:8px}
+#teamview .tv-cell .tv-bar{cursor:grab}
+#teamview .tv-cell.tv-sel .tv-bar{background:#274b85}
 #teamview .tv-cell iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
 #teamview .tv-none{font-size:14px;color:#cfe6ff}
 #teamview .tv-note{font-size:12px;color:#9fd8ff;margin-top:10px}
@@ -2543,41 +2564,156 @@ var m=href.match(/twitch\.tv\/([A-Za-z0-9_]+)/);
 if(!m)return;
 var nameEl=c.querySelector(".lc-name");
 var teamEl=c.querySelector(".lc-team");
-members.push({login:m[1],name:nameEl?nameEl.textContent.trim():m[1],team:teamEl?teamEl.textContent.trim():"その他"});
+var whatEl=c.querySelector(".lc-what");
+var bEl=whatEl?whatEl.querySelector("b"):null;
+var imgEl=c.querySelector(".lc-thumb img");
+members.push({login:m[1],name:nameEl?nameEl.textContent.trim():m[1],team:teamEl?teamEl.textContent.trim():"その他",game:bEl?bEl.textContent.trim():"",thumb:imgEl?imgEl.getAttribute("src"):""});
 });
 if(!members.length)return;
 var teams=[];
 members.forEach(function(x){if(teams.indexOf(x.team)===-1)teams.push(x.team)});
 var sec=document.createElement("section");
 sec.id="teamview";
-var gridId="tv-grid";
-sec.innerHTML='<h2>チーム別マルチビュー</h2><p class="tv-sub">いま配信中のメンバーを、チームごとに並べて同時視聴できます。チームを選んでください。</p><div class="tv-chips"></div><div class="tv-grid" id="'+gridId+'"></div><p class="tv-note">プレイヤーは音声なしで再生されます。音を出したい画面はタップして操作してください。同時表示は最大4画面までです。</p>';
+sec.innerHTML='<h2>チーム別マルチビュー</h2><p class="tv-sub">チームを選ぶと、配信中のメンバーを大きく1画面で見られます。下の小さい画面をタップするとメインと入れ替わります。グリッド表示では名前のバーをドラッグ（または2つタップ）で並び替えできます。</p><div class="tv-chips"></div><div class="tv-modes"></div><div class="tv-body"></div><p class="tv-note">プレイヤーは音声なしで再生されます。音を出したい画面はタップして操作してください。</p>';
 var anchor=document.getElementById("now");
 if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else document.body.appendChild(sec);
 var toc=document.querySelector(".toc-in");
 if(toc){var a=document.createElement("a");a.href="#teamview";a.textContent="マルチビュー";toc.appendChild(a)}
-var chips=sec.querySelector(".tv-chips");
-var grid=sec.querySelector("#"+gridId);
+var chipsEl=sec.querySelector(".tv-chips");
+var modesEl=sec.querySelector(".tv-modes");
+var bodyEl=sec.querySelector(".tv-body");
 var current=teams[0];
+var mode="focus";
+var focusLogin=null;
+var chatOn=false;
+var orders={};
+var selIdx=-1;
+function teamMembers(t){
+if(!orders[t]){
+var list=members.filter(function(x){return x.team===t});
+list.sort(function(a,b){if(a.game<b.game)return -1;if(a.game>b.game)return 1;return a.name<b.name?-1:1});
+orders[t]=list.map(function(x){return x.login});
+}
+return orders[t].map(function(lg){return members.filter(function(x){return x.login===lg})[0]});
+}
+function playerSrc(lg){return "https://player.twitch.tv/?channel="+lg+"&parent="+location.hostname+"&muted=true&autoplay=true"}
+function bar(x,extra){
+var d=document.createElement("div");
+d.className="tv-bar";
+var left=document.createElement("span");
+left.textContent=x.name;
+if(x.game){var g=document.createElement("span");g.className="tv-game";g.textContent=x.game;left.appendChild(document.createTextNode(" "));left.appendChild(g)}
+d.appendChild(left);
+if(extra)d.appendChild(extra);
+return d;
+}
 function render(){
-chips.innerHTML="";
+chipsEl.innerHTML="";
 teams.forEach(function(t){
 var b=document.createElement("button");
 b.className="tv-chip"+(t===current?" tv-on":"");
 var n=members.filter(function(x){return x.team===t}).length;
 b.textContent=t+"（"+n+"）";
-b.addEventListener("click",function(){current=t;render()});
-chips.appendChild(b);
+b.addEventListener("click",function(){current=t;focusLogin=null;selIdx=-1;render()});
+chipsEl.appendChild(b);
 });
-grid.innerHTML="";
-var list=members.filter(function(x){return x.team===current}).slice(0,4);
-list.forEach(function(x){
+modesEl.innerHTML="";
+[["focus","大きく1画面"],["g-std","グリッド（標準）"],["g-big","グリッド（大）"]].forEach(function(md){
+var b=document.createElement("button");
+b.className="tv-mode"+(mode===md[0]?" tv-on":"");
+b.textContent=md[1];
+b.addEventListener("click",function(){mode=md[0];selIdx=-1;render()});
+modesEl.appendChild(b);
+});
+bodyEl.innerHTML="";
+var list=teamMembers(current);
+if(!list.length){var p=document.createElement("p");p.className="tv-none";p.textContent="このチームは現在配信中ではありません。";bodyEl.appendChild(p);return}
+if(mode==="focus")renderFocus(list);else renderGrid(list);
+}
+function renderFocus(list){
+if(!focusLogin||!list.some(function(x){return x.login===focusLogin}))focusLogin=list[0].login;
+var main=list.filter(function(x){return x.login===focusLogin})[0];
+var stage=document.createElement("div");
+stage.className="tv-stage";
+var chatBtn=document.createElement("button");
+chatBtn.className="tv-chatbtn"+(chatOn?" tv-on":"");
+chatBtn.textContent=chatOn?"チャットを隠す":"チャットも見る";
+chatBtn.addEventListener("click",function(){chatOn=!chatOn;render()});
+stage.appendChild(bar(main,chatBtn));
+var wrap=document.createElement("div");
+wrap.className="tv-stagewrap";
+var pw=document.createElement("div");
+pw.className="tv-player";
+var ifr=document.createElement("iframe");
+ifr.src=playerSrc(main.login);
+ifr.setAttribute("allowfullscreen","true");
+pw.appendChild(ifr);
+wrap.appendChild(pw);
+if(chatOn){
+var cw=document.createElement("div");
+cw.className="tv-chat";
+var cif=document.createElement("iframe");
+cif.src="https://www.twitch.tv/embed/"+main.login+"/chat?parent="+location.hostname+"&darkpopout";
+cw.appendChild(cif);
+wrap.appendChild(cw);
+}
+stage.appendChild(wrap);
+bodyEl.appendChild(stage);
+var subs=list.filter(function(x){return x.login!==focusLogin});
+if(subs.length){
+var sg=document.createElement("div");
+sg.className="tv-subs";
+subs.forEach(function(x){
+var b=document.createElement("button");
+b.className="tv-sub";
+if(x.thumb){var im=document.createElement("img");im.src=x.thumb;im.alt="";b.appendChild(im)}
+var s=document.createElement("span");
+s.className="tv-subname";
+s.textContent=x.name;
+if(x.game){var g=document.createElement("span");g.className="tv-game";g.textContent=x.game;s.appendChild(g)}
+b.appendChild(s);
+b.addEventListener("click",function(){focusLogin=x.login;render()});
+sg.appendChild(b);
+});
+bodyEl.appendChild(sg);
+}
+}
+function renderGrid(list){
+var grid=document.createElement("div");
+grid.className="tv-grid "+mode;
+var shown=list.slice(0,4);
+shown.forEach(function(x,idx){
 var cell=document.createElement("div");
-cell.className="tv-cell";
-var src="https://player.twitch.tv/?channel="+encodeURIComponent(x.login)+"&parent="+encodeURIComponent(location.hostname)+"&muted=true&autoplay=true";
-cell.innerHTML='<div class="tv-name"><span>'+x.name+'</span><a href="https://www.twitch.tv/'+x.login+'" target="_blank" rel="noopener" style="color:#9fd8ff">Twitchで開く</a></div><iframe src="'+src+'" allowfullscreen loading="lazy" title="'+x.name+'のTwitch配信"></iframe>';
+cell.className="tv-cell"+(selIdx===idx?" tv-sel":"");
+var b=bar(x,null);
+b.setAttribute("draggable","true");
+b.title="ドラッグで並び替え／タップ2つで入れ替え";
+b.addEventListener("dragstart",function(e){e.dataTransfer.setData("text/plain",String(idx))});
+b.addEventListener("click",function(){
+if(selIdx===-1){selIdx=idx;render()}
+else if(selIdx===idx){selIdx=-1;render()}
+else{swap(selIdx,idx);selIdx=-1;render()}
+});
+cell.addEventListener("dragover",function(e){e.preventDefault()});
+cell.addEventListener("drop",function(e){e.preventDefault();var from=parseInt(e.dataTransfer.getData("text/plain"),10);if(!isNaN(from)&&from!==idx){swap(from,idx);render()}});
+cell.appendChild(b);
+var ifr=document.createElement("iframe");
+ifr.src=playerSrc(x.login);
+ifr.setAttribute("allowfullscreen","true");
+cell.appendChild(ifr);
 grid.appendChild(cell);
 });
+bodyEl.appendChild(grid);
+if(list.length>4){
+var p=document.createElement("p");
+p.className="tv-note";
+p.textContent="グリッドは最大4画面までです。ほかのメンバーは「大きく1画面」表示で切り替えて見られます。";
+bodyEl.appendChild(p);
+}
+}
+function swap(a,b){
+var ord=orders[current];
+var tmp=ord[a];ord[a]=ord[b];ord[b]=tmp;
 }
 render();
 });
