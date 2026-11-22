@@ -2648,5 +2648,45 @@ xvideos.forEach(function(v){v.setAttribute("playsinline","");v.preload="metadata
 });
 })();
 </script>
+<!-- livesort -->
+<style>
+#live-total{margin:0 0 12px;padding:10px 14px;border-radius:12px;background:#e5484d;color:#fff;font-weight:900;font-size:16px;letter-spacing:.02em}
+#live-total small{display:block;font-weight:700;font-size:12px;opacity:.85;margin-top:2px}
+</style>
+<script>
+(function(){
+function parseViewers(card){
+  var dv=card.getAttribute("data-viewers");
+  if(dv){var n=parseInt(dv,10);if(!isNaN(n))return n}
+  var t=card.textContent||"";
+  var m=t.match(/([\d,]+)\s*人が視聴/)||t.match(/視聴者\s*約?\s*([\d,]+)\s*人/);
+  if(m){var v=parseInt(m[1].replace(/,/g,""),10);if(!isNaN(v))return v}
+  return -1;
+}
+function run(){
+  var grid=document.querySelector(".live-grid");
+  if(!grid)return;
+  var cards=Array.prototype.slice.call(grid.querySelectorAll(".live-card"));
+  if(cards.length<2)return;
+  var items=cards.map(function(c,i){return{c:c,i:i,v:parseViewers(c)}});
+  var total=0,counted=0;
+  items.forEach(function(it){if(it.v>=0){total+=it.v;counted++}});
+  items.sort(function(a,b){
+    if(a.v>=0&&b.v>=0)return b.v-a.v;
+    if(a.v>=0)return -1;
+    if(b.v>=0)return 1;
+    return a.i-b.i;
+  });
+  items.forEach(function(it){grid.appendChild(it.c)});
+  if(counted>0&&!document.getElementById("live-total")){
+    var d=document.createElement("div");
+    d.id="live-total";
+    d.innerHTML="いま "+cards.length+"人が配信中 ・ 合計 約"+total.toLocaleString("ja-JP")+"人が視聴中<small>視聴者数が分かる配信の合計です。カードは視聴者数の多い順に並んでいます</small>";
+    grid.parentNode.insertBefore(d,grid);
+  }
+}
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",run)}else{run()}
+})();
+</script>
 </body>
 </html>
