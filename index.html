@@ -600,7 +600,6 @@ var timer=setInterval(tick,1000);
 var closed=false;
 function close(){if(closed)return;closed=true;clearInterval(timer);el.classList.add("cd-hide");setTimeout(function(){el.style.display="none"},480)}
 el.addEventListener("click",close);
-setTimeout(close,6000);
 })();
 </script>
 
